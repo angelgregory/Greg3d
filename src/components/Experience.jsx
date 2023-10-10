@@ -18,7 +18,7 @@ import { Hamper } from "./Furnitures/Hamper";
 import { useRef, useState } from "react";
 import { Boxes } from "./Furnitures/Boxes";
 import AboutMe from "./AboutMe";
-import IFrame from "./IFrame";
+import IFrame from "./IFrame.jsx";
 
 // function IFrame({ children }) {
 //    const [ref, setRef] = useState();
