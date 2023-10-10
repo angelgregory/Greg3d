@@ -11,15 +11,26 @@
   "dependencies": {
     "@react-three/drei": "9.75.0",
     "@react-three/fiber": "8.13.3",
+    "@react-three/rapier": "^1.1.1",
     "@types/three": "0.152.1",
+    "animate.css": "^4.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "three": "0.153.0"
+    "react-spring": "^9.7.3",
+    "three": "0.153.0",
+    "zustand": "^4.3.7"
   },
   "devDependencies": {
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
     "@vitejs/plugin-react": "^3.1.0",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.31",
+    "tailwindcss": "^3.3.3",
     "vite": "^4.1.0"
-  }
+  },
+  "main": "index.js",
+  "repository": "https://github.com/wass08/r3f-vite-starter.git",
+  "author": "angelgregory <aglansangan@gmail.com>",
+  "license": "MIT"
 }
