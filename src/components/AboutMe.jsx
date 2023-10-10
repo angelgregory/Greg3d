@@ -3,6 +3,7 @@ import "animate.css";
 import ag from "../assets/images/ag.png";
 import background from "../assets/images/background-cartoon.jpg";
 import ToFrame from "./ToFrame";
+import "../index.css";
 const AboutMe = ({ isClicked, setIsClicked }) => {
    ToFrame();
    const handleButtonClick = () => {
