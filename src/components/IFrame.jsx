@@ -13,15 +13,14 @@ const IFrame = ({ children }) => {
          ref.style.border = "none";
          ref.style.pointerEvents = "auto";
 
-         ref.addEventListener("load", () => {
-            const iframeDocument = ref.contentDocument;
-            var otherhead = iframeDocument.getElementsByTagName("head")[0];
-            var link = iframeDocument.createElement("link");
-            link.setAttribute("rel", "stylesheet");
-            link.setAttribute("type", "text/css");
-            link.setAttribute("href", "/src/index.css");
-            otherhead.appendChild(link);
-         });
+         //allow style
+         const iframeDocument = ref.contentDocument;
+         var otherhead = iframeDocument.getElementsByTagName("head")[0];
+         var link = iframeDocument.createElement("link");
+         link.setAttribute("rel", "stylesheet");
+         link.setAttribute("type", "text/css");
+         link.setAttribute("href", "/src/index.css");
+         otherhead.appendChild(link);
       }
    }, [ref]);
 
