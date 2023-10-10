@@ -220,6 +220,8 @@ export const Experience = () => {
             <Boxes scale={[5, 5, 5]}></Boxes>
          </RigidBody>
          <Html fullscreen zIndexRange={[0, 0]}>
+           
+
             {isIntersected ? (
                <div
                   className={

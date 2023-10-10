@@ -14,13 +14,13 @@ const IFrame = ({ children }) => {
          ref.style.pointerEvents = "auto";
 
          //allow style
-         const iframeDocument = ref.contentDocument;
-         var otherhead = iframeDocument.getElementsByTagName("head")[0];
-         var link = iframeDocument.createElement("link");
-         link.setAttribute("rel", "stylesheet");
-         // link.setAttribute("type", "text/css");
-         link.setAttribute("href", `"src/index.css"`);
-         otherhead.appendChild(link);
+         // const iframeDocument = ref.contentDocument;
+         // var otherhead = iframeDocument.getElementsByTagName("head")[0];
+         // var link = iframeDocument.createElement("link");
+         // link.setAttribute("rel", "stylesheet");
+         // // link.setAttribute("type", "text/css");
+         // link.setAttribute("href", "src/index.css");
+         // otherhead.appendChild(link);
       }
    }, [ref]);
 
@@ -28,6 +28,7 @@ const IFrame = ({ children }) => {
 
    return (
       <iframe title="iframe" ref={setRef}>
+         <link type="text/css" rel="Stylesheet" href="src/index.css" />
          {container && createPortal(children, container)}
       </iframe>
    );
