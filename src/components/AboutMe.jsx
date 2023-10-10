@@ -10,8 +10,11 @@ const AboutMe = ({ isClicked, setIsClicked }) => {
       // Add your button click logic here
       console.log("Button clicked!"); // Verify if the click event is being triggered
    };
+   const css = `h1 {color:red;}
+   p {color:blue;}`;
    return (
       <div>
+         <style>{css}</style>
          <link rel="stylesheet" type="text/css" href="/index.css" />
          <div className="flex items-center justify-center h-screen myscreen">
             <div className="relative rounded-[50px] w-[60vw] aspect-[16/9]">

@@ -13,7 +13,7 @@ body {
 }
 
 .exempt-overflow {
-   overflow: visible !important;
+   overflow: visible;
 }
 
 h1 {
