@@ -3,6 +3,9 @@ import { createPortal } from "react-dom";
 
 const IFrame = ({ children }) => {
    const [ref, setRef] = useState();
+
+   console.log("You are in the IFRAME BRANCH");
+
    useEffect(() => {
       if (ref) {
          ref.style.width = "100%";
@@ -12,10 +15,12 @@ const IFrame = ({ children }) => {
 
          //allow style
          const iframeDocument = ref.contentDocument;
-         const styleLink = iframeDocument.createElement("link");
-         styleLink.rel = "stylesheet";
-         styleLink.href = "src/index.css";
-         iframeDocument.head.appendChild(styleLink);
+         var otherhead = iframeDocument.getElementsByTagName("head")[0];
+         var link = iframeDocument.createElement("link");
+         link.setAttribute("rel", "stylesheet");
+         link.setAttribute("type", "text/css");
+         link.setAttribute("href", "src/index.css");
+         otherhead.appendChild(link);
       }
    }, [ref]);
 
