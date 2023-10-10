@@ -12,7 +12,7 @@ const AboutMe = ({ isClicked, setIsClicked }) => {
    };
    return (
       <div>
-         <link rel="stylesheet" href="/src/index.css" />
+         <link rel="stylesheet" href="index.css" />
          <div className="flex items-center justify-center h-screen myscreen">
             <div className="relative rounded-[50px] w-[60vw] aspect-[16/9]">
                <div className="relative rounded-[50px] w-[60vw] aspect-[16/9]  overflow-hidden">
