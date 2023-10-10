@@ -10,8 +10,62 @@ const AboutMe = ({ isClicked, setIsClicked }) => {
       // Add your button click logic here
       console.log("Button clicked!"); // Verify if the click event is being triggered
    };
-   const css = `h1 {color:red;}
-   p {color:blue;}`;
+   const css = `@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@700&family=Inter:wght@300;700&display=swap");
+   @import "animate.css";
+   @tailwind base;
+   @tailwind components;
+   @tailwind utilities;
+   #root {
+      width: 100vw;
+      height: 100vh;
+   }
+   
+   body {
+      margin: 0;
+   }
+   
+   .exempt-overflow {
+      overflow: visible !important;
+   }
+   
+   h1 {
+      font-family: sans-serif;
+      color: white;
+   }
+   .menu {
+      position: fixed;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      justify-content: center;
+      align-items: center;
+      width: 100vw;
+      height: 100vh;
+      left: 0;
+      top: 0;
+      background: rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(4px);
+   }
+   .menu .button {
+      background: rgba(255, 255, 255, 0.6);
+      padding: 16px 32px;
+      border: none;
+      transition: background-color 0.4s;
+      font-size: 1.5rem;
+   }
+   .menu button:hover {
+      background: white;
+      cursor: pointer;
+   }
+   
+   .ag {
+      -webkit-filter: drop-shadow(2px 2px 0 white) drop-shadow(-2px 2px 0 white)
+         drop-shadow(2px -2px 0 white) drop-shadow(-2px -2px 0 white);
+   
+      filter: drop-shadow(2px 2px 0 white) drop-shadow(-2px 2px 0 white)
+         drop-shadow(2px -2px 0 white) drop-shadow(-2px -2px 0 white);
+   }
+   `;
    return (
       <div>
          <style>{css}</style>
