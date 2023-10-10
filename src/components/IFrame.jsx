@@ -18,8 +18,8 @@ const IFrame = ({ children }) => {
          var otherhead = iframeDocument.getElementsByTagName("head")[0];
          var link = iframeDocument.createElement("link");
          link.setAttribute("rel", "stylesheet");
-         link.setAttribute("type", "text/css");
-         link.setAttribute("href", "src/index.css");
+         // link.setAttribute("type", "text/css");
+         link.setAttribute("href", `"index.css"`);
          otherhead.appendChild(link);
       }
    }, [ref]);
