@@ -16,7 +16,7 @@ const IFrame = ({ children }) => {
          const iframeDocument = ref.contentDocument;
          const globalCssLink = iframeDocument.createElement("link");
          globalCssLink.rel = "stylesheet";
-         globalCssLink.href = `@(Url.Content("src/index.css?v=1.0"))`; // Update the path
+         globalCssLink.href = "../src/index.css?v=1.0"; // Update the path
          iframeDocument.head.appendChild(globalCssLink);
 
          //allow style
