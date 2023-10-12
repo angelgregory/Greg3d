@@ -19,6 +19,7 @@ import { useRef, useState } from "react";
 import { Boxes } from "./Furnitures/Boxes";
 import AboutMe from "./AboutMe";
 import IFrame from "./IFrame.jsx";
+import Frame from "react-frame-component";
 
 // function IFrame({ children }) {
 //    const [ref, setRef] = useState();
@@ -228,12 +229,12 @@ export const Experience = () => {
                         : ""
                   }
                >
-                  <IFrame>
+                  <Frame>
                      <AboutMe
                         isClicked={isClicked}
                         setIsClicked={setIsClicked}
                      />
-                  </IFrame>
+                  </Frame>
                </div>
             ) : (
                // <iframe

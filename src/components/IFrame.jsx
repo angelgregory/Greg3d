@@ -16,7 +16,7 @@ const IFrame = ({ children }) => {
          const iframeDocument = ref.contentDocument;
          const globalCssLink = iframeDocument.createElement("link");
          globalCssLink.rel = "stylesheet";
-         globalCssLink.href = "../src/index.css?v=1.0"; // Update the path
+         globalCssLink.href = "src/index.css"; // Update the path
          iframeDocument.head.appendChild(globalCssLink);
 
          //allow style
@@ -29,6 +29,7 @@ const IFrame = ({ children }) => {
          // otherhead.appendChild(link);
       }
    }, [ref]);
+
    const container = ref?.contentDocument?.body;
 
    return (
