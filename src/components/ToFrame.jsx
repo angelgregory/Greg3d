@@ -7,6 +7,7 @@ const ToFrame = () => {
       // if I want to access the iframe document
       console.log(window.frames[0].document); // <== this works well
    }, []);
+
 };
 
 export default ToFrame;
