@@ -19,6 +19,7 @@ import { useRef, useState } from "react";
 import { Boxes } from "./Furnitures/Boxes";
 import AboutMe from "./AboutMe";
 import IFrame from "./IFrame.jsx";
+import MySelf from "./MySelf";
 
 export const Experience = () => {
    const handleButtonClick = () => {
@@ -195,7 +196,7 @@ export const Experience = () => {
             <Boxes scale={[5, 5, 5]}></Boxes>
          </RigidBody>
          <Html fullscreen zIndexRange={[0, 0]}>
-            <link rel="stylesheet" type="text/css" href="src/index.css" />
+            <link rel="stylesheet" type="text/css" href="/src/index.css" />
             {isIntersected ? (
                <div
                   className={
@@ -205,7 +206,7 @@ export const Experience = () => {
                   }
                >
                   <IFrame>
-                     <AboutMe
+                     <MySelf
                         isClicked={isClicked}
                         setIsClicked={setIsClicked}
                      />

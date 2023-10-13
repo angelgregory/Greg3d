@@ -10,9 +10,12 @@ const AboutMe = ({ isClicked, setIsClicked }) => {
       // Add your button click logic here
       console.log("Button clicked!"); // Verify if the click event is being triggered
    };
+   const style={
+      
+   }
    return (
       <div>
-         <link rel="stylesheet" type="text/css" href="src/index.css" />
+         <link rel="stylesheet" type="text/css" href="/src/index.css" />
          <div className="flex items-center justify-center h-screen myscreen">
             <div className="relative rounded-[50px] w-[60vw] aspect-[16/9]">
                <div className="relative rounded-[50px] w-[60vw] aspect-[16/9]  overflow-hidden">

@@ -34,7 +34,6 @@ const IFrame = ({ children }) => {
 
    return (
       <iframe title="iframe" ref={setRef}>
-         <link rel="stylesheet" type="text/css" href="src/index.css" />
          {container && createPortal(children, container)}
       </iframe>
    );
