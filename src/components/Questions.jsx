@@ -2,12 +2,12 @@ const Questions = [
    {
       question: "Who is Greg?",
       answer:
-         "Greg is known for his enthusiasm and creativity. Loves being the person who pitches innovative ideas and tries to bring them to life.",
+         "Greg is known for his enthusiasm and creativity. Loves being the person who pitches innovative ideas and tries to bring them to life. In simple terms, a Weirdo",
    },
    {
       question: "What is Greg?",
       answer:
-         "An aspiring Software Developer known for his enthusiasm and creativity. He’s passionate about turning ideas into reality and always eager to solve complex problems.",
+         "A Software Developer, UIX and Grahpic Designer, known for his enthusiasm and creativity. He’s passionate about turning ideas into reality and always eager to solve complex problems.",
    },
    {
       question: "Where is Greg?",
@@ -22,7 +22,7 @@ const Questions = [
    {
       question: "Why is Greg?",
       answer:
-         "Because. I Can.\n\nHire me though, I am always passionate, kind, funny, curious, always wants to solve problems [not your personal problem, though]",
+         "I'll do you something better, Why is Gamora? Hire me though, I am always passionate, kind, funny, curious, always wants to solve problems [I aint steppin' on your personal problems, though]",
    },
 ];
 

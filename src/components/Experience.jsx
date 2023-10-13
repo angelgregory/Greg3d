@@ -20,12 +20,14 @@ import { Boxes } from "./Furnitures/Boxes";
 import AboutMe from "./AboutMe";
 import IFrame from "./IFrame.jsx";
 import MySelf from "./MySelf";
+import MenuControls from "./MenuControls";
 
 export const Experience = () => {
    const handleButtonClick = () => {
       // Triggered when the button inside the canvas is clicked
       console.log("onCanvas");
    };
+
    const ref = useRef();
    const [isIntersected, setIsIntersected] = useState(false);
    const [isClicked, setIsClicked] = useState(false);

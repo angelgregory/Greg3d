@@ -10,7 +10,7 @@ export const globalStyles = `
   }
 
   /* Apply the font to an element */
-  li {
+  .content {
     z-index: 10;
   }
 
@@ -18,9 +18,36 @@ export const globalStyles = `
     text-decoration: underline;
     cursor: pointer;
   }
+  li:focus{
+   color:blue
+  }
+  .ctrl-button{
+   width:5vw;
+   height:5vw;
+   margin:0.5em;
+  }
+  .ctrl-button.click{
+   background-color:white;
+   border: 2px solid red;
+   border-radius: 5px;
+  }
+  .flex{
+   display:flex;
+  }
+  .flex-col{
+   flex-direction:column
+  }
+  .space-between{
+   justify-content:space-between
+  }
+  .controls{ 
+   position: fixed;
+   width: 100vw;
+   height: 100vh;
+   left: 5vw;
+   top: 70vh;
+   }
 `;
-
-
 
 export const flex = {
    display: "flex",

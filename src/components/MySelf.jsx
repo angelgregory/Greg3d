@@ -4,7 +4,7 @@ import ag from "../assets/images/ag.png";
 import background from "../assets/images/background-cartoon.jpg";
 import ToFrame from "./ToFrame.jsx";
 import { GrClose } from "react-icons/gr";
-import globalStyles, {
+import {
    flex,
    itemsCenter,
    justifyCenter,
@@ -19,6 +19,7 @@ import globalStyles, {
    col,
    font,
    lgHover,
+   globalStyles,
 } from "./styles";
 import Questions from "./Questions";
 
@@ -92,6 +93,8 @@ const MySelf = ({ isClicked, setIsClicked }) => {
                      </div>
 
                      <div
+
+                     className="content"
                         style={{
                            ...col.span2,
                            padding: "2rem 5rem",
@@ -128,7 +131,7 @@ const MySelf = ({ isClicked, setIsClicked }) => {
                            <h1 style={{ ...font.bold }}>
                               {Questions[showContent].question}
                            </h1>
-                           <p style={{ ...font.light, paddingRight: "15vw" }}>
+                           <p style={{ ...font.nav, paddingRight: "15vw" }}>
                               {Questions[showContent].answer}
                            </p>
                         </div>

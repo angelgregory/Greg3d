@@ -5,6 +5,7 @@ import { Suspense, useMemo, useState } from "react";
 import { Experience } from "./components/Experience";
 import Menu from "./components/Menu";
 import "./index.css";
+import MenuControls from "./components/MenuControls";
 export const Controls = {
    forward: "forward",
    back: "back",
@@ -33,10 +34,10 @@ function App() {
                <Physics debug gravity={[0, -9.8, 0]}>
                   <Experience />
                </Physics>
-               
             </Suspense>
          </Canvas>
          <Menu />
+         <MenuControls />
       </KeyboardControls>
    );
 }
