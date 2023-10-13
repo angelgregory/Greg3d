@@ -19,33 +19,7 @@ import { useRef, useState } from "react";
 import { Boxes } from "./Furnitures/Boxes";
 import AboutMe from "./AboutMe";
 import IFrame from "./IFrame.jsx";
-import Frame from "react-frame-component";
 
-// function IFrame({ children }) {
-//    const [ref, setRef] = useState();
-//    useEffect(() => {
-//       if (ref) {
-//          ref.style.width = "100%";
-//          ref.style.height = "100vh";
-//          ref.style.border = "none";
-//          ref.style.pointerEvents = "auto";
-//          // Include Tailwind CSS within the iframe's document
-//          const iframeDocument = ref.contentDocument;
-//          const tailwindLink = iframeDocument.createElement("link");
-//          tailwindLink.rel = "stylesheet";
-//          tailwindLink.href = "node_modules/tailwindcss/tailwind.css"; // Update the path
-//          iframeDocument.head.appendChild(tailwindLink);
-//       }
-//    }, [ref]);
-
-//    const container = ref?.contentDocument?.body;
-
-//    return (
-//       <iframe title="iframe" ref={setRef}>
-//          {container && createPortal(children, container)}
-//       </iframe>
-//    );
-// }
 export const Experience = () => {
    const handleButtonClick = () => {
       // Triggered when the button inside the canvas is clicked
@@ -221,6 +195,7 @@ export const Experience = () => {
             <Boxes scale={[5, 5, 5]}></Boxes>
          </RigidBody>
          <Html fullscreen zIndexRange={[0, 0]}>
+            <link rel="stylesheet" type="text/css" href="src/index.css" />
             {isIntersected ? (
                <div
                   className={
@@ -229,12 +204,12 @@ export const Experience = () => {
                         : ""
                   }
                >
-                  <Frame>
+                  <IFrame>
                      <AboutMe
                         isClicked={isClicked}
                         setIsClicked={setIsClicked}
                      />
-                  </Frame>
+                  </IFrame>
                </div>
             ) : (
                // <iframe

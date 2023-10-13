@@ -13,20 +13,20 @@ const IFrame = ({ children }) => {
          ref.style.border = "none";
          ref.style.pointerEvents = "auto";
 
-         const iframeDocument = ref.contentDocument;
-         const globalCssLink = iframeDocument.createElement("link");
-         globalCssLink.rel = "stylesheet";
-         globalCssLink.href = "src/index.css"; // Update the path
-         iframeDocument.head.appendChild(globalCssLink);
+         // const iframeDocument = ref.contentDocument;
+         // const globalCssLink = iframeDocument.createElement("link");
+         // globalCssLink.rel = "stylesheet";
+         // globalCssLink.href = "src/index.css"; // Update the path
+         // iframeDocument.head.appendChild(globalCssLink);
 
          //allow style
-         // const iframeDocument = ref.contentDocument;
-         // var otherhead = iframeDocument.getElementsByTagName("head")[0];
-         // var link = iframeDocument.createElement("link");
-         // link.setAttribute("rel", "stylesheet");
-         // link.setAttribute("type", "text/css");
-         // link.setAttribute("href", "/src/index.css");
-         // otherhead.appendChild(link);
+         const iframeDocument = ref.contentDocument;
+         var otherhead = iframeDocument.getElementsByTagName("head")[0];
+         var link = iframeDocument.createElement("link");
+         link.setAttribute("rel", "stylesheet");
+         link.setAttribute("type", "text/css");
+         link.setAttribute("href", "/src/index.css");
+         otherhead.appendChild(link);
       }
    }, [ref]);
 
@@ -34,6 +34,7 @@ const IFrame = ({ children }) => {
 
    return (
       <iframe title="iframe" ref={setRef}>
+         <link rel="stylesheet" type="text/css" href="src/index.css" />
          {container && createPortal(children, container)}
       </iframe>
    );
