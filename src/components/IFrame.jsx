@@ -34,6 +34,7 @@ const IFrame = ({ children }) => {
 
    return (
       <iframe title="iframe" ref={setRef}>
+         <script src="https://cdn.tailwindcss.com"></script>
          {container && createPortal(children, container)}
       </iframe>
    );
