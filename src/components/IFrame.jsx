@@ -19,14 +19,14 @@ const IFrame = ({ children }) => {
          // globalCssLink.href = "src/index.css"; // Update the path
          // iframeDocument.head.appendChild(globalCssLink);
 
-         //allow style
-         const iframeDocument = ref.contentDocument;
-         var otherhead = iframeDocument.getElementsByTagName("head")[0];
-         var link = iframeDocument.createElement("link");
-         link.setAttribute("rel", "stylesheet");
-         link.setAttribute("type", "text/css");
-         link.setAttribute("href", "/src/index.css");
-         otherhead.appendChild(link);
+         // allow style
+         // const iframeDocument = ref.contentDocument;
+         // var otherhead = iframeDocument.getElementsByTagName("head")[0];
+         // var link = iframeDocument.createElement("link");
+         // link.setAttribute("rel", "stylesheet");
+         // link.setAttribute("type", "text/css");
+         // link.setAttribute("href", "/src/index.css");
+         // otherhead.appendChild(link);
       }
    }, [ref]);
 
@@ -34,7 +34,7 @@ const IFrame = ({ children }) => {
 
    return (
       <iframe title="iframe" ref={setRef}>
-         <script src="https://cdn.tailwindcss.com"></script>
+       
          {container && createPortal(children, container)}
       </iframe>
    );

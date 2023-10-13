@@ -206,7 +206,7 @@ export const Experience = () => {
                   }
                >
                   <IFrame>
-                     <AboutMe
+                     <MySelf
                         isClicked={isClicked}
                         setIsClicked={setIsClicked}
                      />
