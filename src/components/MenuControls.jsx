@@ -52,8 +52,8 @@ const MenuControls = () => {
                <div className="ctrl-button blank"></div>
                <button
                   className="ctrl-button click"
-                  onPointerDown={handleButtonMouseDown("W")}
-                  onPointerUp={handleButtonMouseUp("W")}
+                  onPointerEnter={handleButtonMouseDown("W")}
+                  onPointerLeave={handleButtonMouseUp("W")}
                >
                   W
                </button>
@@ -62,22 +62,22 @@ const MenuControls = () => {
             <div className="flex">
                <button
                   className="ctrl-button click"
-                  onPointerDown={handleButtonMouseDown("A")}
-                  onPointerUp={handleButtonMouseUp("A")}
+                  onPointerEnter={handleButtonMouseDown("A")}
+                  onPointerLeave={handleButtonMouseUp("A")}
                >
                   A
                </button>
                <button
                   className="ctrl-button click"
-                  onPointerDown={handleButtonMouseDown("S")}
-                  onPointerUp={handleButtonMouseUp("S")}
+                  onPointerEnter={handleButtonMouseDown("S")}
+                  onPointerLeave={handleButtonMouseUp("S")}
                >
                   S
                </button>
                <button
                   className="ctrl-button click"
-                  onPointerDown={handleButtonMouseDown("D")}
-                  onPointerUp={handleButtonMouseUp("D")}
+                  onPointerEnter={handleButtonMouseDown("D")}
+                  onPointerLeave={handleButtonMouseUp("D")}
                >
                   D
                </button>
