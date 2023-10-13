@@ -46,7 +46,7 @@ export const globalStyles = `
    width: 100vw;
    height: 100vh;
    left: 5vw;
-   top: 70vh;
+   bottom: -80vh;
    }
 `;
 

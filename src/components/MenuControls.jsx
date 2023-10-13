@@ -47,7 +47,7 @@ const MenuControls = () => {
    return (
       <div>
          <style>{globalStyles}</style>
-         <div className="relative controls" style={{ width: "30vw" }}>
+         <div className="relative controls">
             <div className="flex">
                <div className="ctrl-button blank"></div>
                <button
