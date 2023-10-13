@@ -15,7 +15,7 @@ import { Carpet } from "./Furnitures/Carpet";
 import { Fan } from "./Furnitures/Fan";
 import { Wardrobe } from "./Furnitures/Wardrobe";
 import { Hamper } from "./Furnitures/Hamper";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Boxes } from "./Furnitures/Boxes";
 import AboutMe from "./AboutMe";
 import IFrame from "./IFrame.jsx";
@@ -29,6 +29,7 @@ export const Experience = () => {
    const ref = useRef();
    const [isIntersected, setIsIntersected] = useState(false);
    const [isClicked, setIsClicked] = useState(false);
+
    if (isIntersected) {
       if (isClicked) {
          setIsIntersected(false);
@@ -37,35 +38,6 @@ export const Experience = () => {
    }
    // const [carpetPosition, setCarpetPosition] = useState([-3, -100, 5]);
    const animationSpeed = 2; // Adjust the speed of the animation
-   // useEffect(() => {
-   //    if (isIntersected) {
-   //       // Animate carpet moving up (increase y-coordinate)
-   //       const targetY = 4; // Change the target y-coordinate as needed
-   //       const animate = () => {
-   //          setCarpetPosition((prevPosition) => {
-   //             const newY = prevPosition[1] + animationSpeed;
-   //             if (newY < targetY) {
-   //                requestAnimationFrame(animate);
-   //             }
-   //             return [-3, newY, 5];
-   //          });
-   //       };
-   //       animate();
-   //    } else {
-   //       // Animate carpet moving down (decrease y-coordinate)
-   //       const targetY = -100; // Change the target y-coordinate as needed
-   //       const animate = () => {
-   //          setCarpetPosition((prevPosition) => {
-   //             const newY = prevPosition[1] - animationSpeed;
-   //             if (newY > targetY) {
-   //                requestAnimationFrame(animate);
-   //             }
-   //             return [-3, newY, 5];
-   //          });
-   //       };
-   //       animate();
-   //    }
-   // }, [isIntersected]);
    const srcDoc = <AboutMe />;
    return (
       <>
@@ -135,6 +107,10 @@ export const Experience = () => {
                   scale={[4, 4, 4]}
                   position={[-6, 2.25, -1]}
                   rotation-y={[-(Math.PI / 180) * 90]}
+                  onClick={() => {
+                     setIsIntersected(true);
+                     console.log("Entering intersection: isIntersected true");
+                  }}
                />
                {/* Chair */}
                <CuboidCollider args={[2, 2, 0.5]} position={[-4.5, 0, -1.5]} />

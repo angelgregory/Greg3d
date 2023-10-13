@@ -1,4 +1,27 @@
 // styles.js
+// globalStyles.js
+
+export const globalStyles = `
+  @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@700&family=Inter:wght@300;700&display=swap");
+
+  body {
+    margin: 0px;
+    padding: 0px;
+  }
+
+  /* Apply the font to an element */
+  li {
+    z-index: 10;
+  }
+
+  li:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+`;
+
+
+
 export const flex = {
    display: "flex",
 };
@@ -84,4 +107,3 @@ export const lgHover = {
    fontSize: "300vh", // Change font size to 35px on hover
    cursor: "pointer", // Change cursor to pointer on hover
 };
-

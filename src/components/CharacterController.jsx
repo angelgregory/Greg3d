@@ -24,6 +24,7 @@ const CharacterController = () => {
    // );
    const rigidbody = useRef();
    const isOnFloor = useRef(true);
+
    useFrame((state, delta) => {
       const impulse = { x: 0, y: 0, z: 0 };
       if (jump && isOnFloor.current) {

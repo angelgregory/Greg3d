@@ -33,6 +33,7 @@ function App() {
                <Physics debug gravity={[0, -9.8, 0]}>
                   <Experience />
                </Physics>
+               
             </Suspense>
          </Canvas>
          <Menu />

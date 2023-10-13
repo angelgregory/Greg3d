@@ -4,7 +4,7 @@ import ag from "../assets/images/ag.png";
 import background from "../assets/images/background-cartoon.jpg";
 import ToFrame from "./ToFrame.jsx";
 import { GrClose } from "react-icons/gr";
-import {
+import globalStyles, {
    flex,
    itemsCenter,
    justifyCenter,
@@ -21,6 +21,7 @@ import {
    lgHover,
 } from "./styles";
 import Questions from "./Questions";
+
 const MySelf = ({ isClicked, setIsClicked }) => {
    const [showContent, setShowContent] = useState(0);
 
@@ -33,29 +34,14 @@ const MySelf = ({ isClicked, setIsClicked }) => {
       // Add your button click logic here
       console.log("Button clicked!"); // Verify if the click event is being triggered
    };
-
    return (
       <div>
-         <style jsx global>{`
-            @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@700&family=Inter:wght@300;700&display=swap");
-
-            body {
-               margin: 0px;
-               padding: 0px;
-            }
-
-            /* Apply the font to an element */
-            .myText {
-               font-family: "IBM Plex Mono", monospace;
-               font-family: "Inter", sans-serif;
-            }
-            ul li:hover {
-               text-decoration: underline;
-            }
-         `}</style>
+         <style jsx global>
+            {globalStyles}
+         </style>
 
          {/* <link rel="stylesheet" type="text/css" href="/src/index.css" /> */}
-
+         {/* STYLES CAN ALSO BE IN FORM OF CSS RATHER THAN CONST, */}
          <div
             style={{
                ...flex,
@@ -121,39 +107,24 @@ const MySelf = ({ isClicked, setIsClicked }) => {
                                  justifyContent: "space-between",
                               }}
                            >
-                              <li
-                                 style={{ cursor: "pointer" }}
-                                 onClick={() => liClick(0)}
-                              >
-                                 Who
+                              <li onClick={() => liClick(0)}>
+                                 <a>Who</a>
                               </li>
-                              <li
-                                 style={{ cursor: "pointer" }}
-                                 onClick={() => liClick(1)}
-                              >
-                                 What
+                              <li onClick={() => liClick(1)}>
+                                 <a>What</a>
                               </li>
-                              <li
-                                 style={{ cursor: "pointer" }}
-                                 onClick={() => liClick(2)}
-                              >
-                                 Where
+                              <li onClick={() => liClick(2)}>
+                                 <a>Where</a>
                               </li>
-                              <li
-                                 style={{ cursor: "pointer" }}
-                                 onClick={() => liClick(3)}
-                              >
-                                 When
+                              <li onClick={() => liClick(3)}>
+                                 <a>When</a>
                               </li>
-                              <li
-                                 style={{ cursor: "pointer" }}
-                                 onClick={() => liClick(4)}
-                              >
-                                 Why
+                              <li onClick={() => liClick(4)}>
+                                 <a>Why</a>
                               </li>
                            </ul>
                         </div>
-                        <div style={{ ...absolute, margin: "10vh 0vh" }}>
+                        <div style={{ ...absolute, margin: "8vh 0vh" }}>
                            <h1 style={{ ...font.bold }}>
                               {Questions[showContent].question}
                            </h1>
