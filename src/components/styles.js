@@ -66,3 +66,22 @@ export const col = {
       gridColumn: "span 3 / span 3",
    },
 };
+export const font = {
+   bold: {
+      fontFamily: "IBM Plex Mono, monospace",
+      fontWeight: 700, // Specific font weight (e.g., 700 for bold)
+   },
+   light: {
+      fontFamily: "Inter",
+      fontWeight: "300",
+   },
+   nav: {
+      fontFamily: "IBM Plex Mono, monospace",
+   },
+};
+export const lgHover = {
+   fontFamily: "inherit", // Use the default font family on hover
+   fontSize: "300vh", // Change font size to 35px on hover
+   cursor: "pointer", // Change cursor to pointer on hover
+};
+
