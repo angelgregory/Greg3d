@@ -20,8 +20,13 @@ import {
    font,
    lgHover,
 } from "./styles";
-
+import Questions from "./Questions";
 const MySelf = ({ isClicked, setIsClicked }) => {
+   const [showContent, setShowContent] = useState(0);
+
+   const liClick = (index) => {
+      setShowContent(index);
+   };
    ToFrame();
    const [isIconHovered, setIsIconHovered] = useState(false);
    const handleButtonClick = () => {
@@ -43,6 +48,9 @@ const MySelf = ({ isClicked, setIsClicked }) => {
             .myText {
                font-family: "IBM Plex Mono", monospace;
                font-family: "Inter", sans-serif;
+            }
+            ul li:hover {
+               text-decoration: underline;
             }
          `}</style>
 
@@ -113,17 +121,44 @@ const MySelf = ({ isClicked, setIsClicked }) => {
                                  justifyContent: "space-between",
                               }}
                            >
-                              <li>Who</li>
-                              <li>What</li>
-                              <li>Where</li>
-                              <li>When</li>
-                              <li>Why</li>
+                              <li
+                                 style={{ cursor: "pointer" }}
+                                 onClick={() => liClick(0)}
+                              >
+                                 Who
+                              </li>
+                              <li
+                                 style={{ cursor: "pointer" }}
+                                 onClick={() => liClick(1)}
+                              >
+                                 What
+                              </li>
+                              <li
+                                 style={{ cursor: "pointer" }}
+                                 onClick={() => liClick(2)}
+                              >
+                                 Where
+                              </li>
+                              <li
+                                 style={{ cursor: "pointer" }}
+                                 onClick={() => liClick(3)}
+                              >
+                                 When
+                              </li>
+                              <li
+                                 style={{ cursor: "pointer" }}
+                                 onClick={() => liClick(4)}
+                              >
+                                 Why
+                              </li>
                            </ul>
                         </div>
-                        <div style={{ ...absolute }}>
-                           <h1 style={{ ...font.bold }}>Who Is Greg</h1>
-                           <p style={{ ...font.light }}>
-                              ASDJKASDJKASDJKLKLASD
+                        <div style={{ ...absolute, margin: "10vh 0vh" }}>
+                           <h1 style={{ ...font.bold }}>
+                              {Questions[showContent].question}
+                           </h1>
+                           <p style={{ ...font.light, paddingRight: "15vw" }}>
+                              {Questions[showContent].answer}
                            </p>
                         </div>
                      </div>

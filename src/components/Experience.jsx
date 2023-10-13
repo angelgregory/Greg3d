@@ -118,7 +118,7 @@ export const Experience = () => {
                />
                {/* Desktop */}
                <CuboidCollider
-                  args={[1.5, 2.25, 2]}
+                  args={[2.5, 1.25, 2]}
                   position={[-6, 0, -1]}
                   sensor
                   onIntersectionEnter={() => {
@@ -137,10 +137,7 @@ export const Experience = () => {
                   rotation-y={[-(Math.PI / 180) * 90]}
                />
                {/* Chair */}
-               <CuboidCollider
-                  args={[0.5, 2, 0.5]}
-                  position={[-3.5, 0, -1.5]}
-               />
+               <CuboidCollider args={[2, 2, 0.5]} position={[-4.5, 0, -1.5]} />
                <Chair
                   scale={[4, 4, 4]}
                   position={[-4, 0.25, -2]}
@@ -196,15 +193,9 @@ export const Experience = () => {
             <Boxes scale={[5, 5, 5]}></Boxes>
          </RigidBody>
          <Html fullscreen zIndexRange={[0, 0]}>
-            <link rel="stylesheet" type="text/css" href="/src/index.css" />
+            {/* <link rel="stylesheet" type="text/css" href="/src/index.css" /> */}
             {isIntersected ? (
-               <div
-                  className={
-                     isIntersected
-                        ? "animate__animated animate__bounceInUp"
-                        : ""
-                  }
-               >
+               <div className={"animate__animated animate__bounceInUp"}>
                   <IFrame>
                      <MySelf
                         isClicked={isClicked}
@@ -213,10 +204,6 @@ export const Experience = () => {
                   </IFrame>
                </div>
             ) : (
-               // <iframe
-               //    className="rounded-[50px] w-[100vw] h-auto aspect-[16/9] "
-               //    srcDoc={ReactDOMServer.renderToString(srcDoc)}
-               // />
                ""
             )}
          </Html>
