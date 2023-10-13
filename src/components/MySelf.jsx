@@ -82,13 +82,14 @@ const MySelf = ({ isClicked, setIsClicked }) => {
                            style={{ ...h.full, width: "100%" }}
                         />
                      </div>
-                     <div style={{ ...col.span2, padding: "1rem" }}>
+                     <div style={{ ...col.span2, padding: "2rem 5rem" }}>
                         <div style={{ paddingRight: "5rem" }}>
                            <ul
                               style={{
+                                 paddingLeft: "0",
+                                 listStyleType: "none",
                                  ...flex,
-                                 gap: "2.5rem",
-                                 justifyContent: "flex-end",
+                                 justifyContent: "space-between",
                               }}
                            >
                               <li>Who</li>
@@ -98,15 +99,22 @@ const MySelf = ({ isClicked, setIsClicked }) => {
                               <li>Why</li>
                            </ul>
                         </div>
-                        <div>
+                        <div style={{ ...absolute }}>
                            <h1>Who Is Greg</h1>
                            <p>ASDJKASDJKASDJKLKLASD</p>
                         </div>
                      </div>
                   </div>
                </div>
-               image
-               {/* <img src={ag} /> */}
+               <img
+                  src={ag}
+                  style={{
+                     ...absolute,
+                     bottom: "0",
+                     height: "130%",
+                     left: "-3.5vw",
+                  }}
+               />
             </div>
             <button
                onClick={() => {
