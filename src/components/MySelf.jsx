@@ -3,7 +3,15 @@ import "animate.css";
 import ag from "../assets/images/ag.png";
 import background from "../assets/images/background-cartoon.jpg";
 import ToFrame from "./ToFrame.jsx";
-import { flex, itemsCenter, justifyCenter, hScreen, relative } from "./styles";
+import {
+   flex,
+   itemsCenter,
+   justifyCenter,
+   h,
+   relative,
+   rounded,
+   bg,
+} from "./styles";
 
 const MySelf = ({ isClicked, setIsClicked }) => {
    ToFrame();
@@ -14,12 +22,14 @@ const MySelf = ({ isClicked, setIsClicked }) => {
 
    return (
       <div>
-         <link rel="stylesheet" type="text/css" href="/src/index.css" />
+         {/* <link rel="stylesheet" type="text/css" href="/src/index.css" /> */}
          <div
             style={{
                ...flex,
                ...itemsCenter,
                ...justifyCenter,
+               ...h.screen,
+               ...bg.white,
             }}
          >
             <div>
