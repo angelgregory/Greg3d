@@ -22,8 +22,8 @@ export const globalStyles = `
    color:blue
   }
   .ctrl-button{
-   width:5vw;
-   height:5vw;
+   width:5vh;
+   height:5vh;
    margin:0.5em;
   }
   .ctrl-button.click{
