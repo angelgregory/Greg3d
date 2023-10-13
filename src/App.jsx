@@ -37,7 +37,9 @@ function App() {
             </Suspense>
          </Canvas>
          <Menu />
-         <MenuControls />
+         <div >
+            <MenuControls />
+         </div>
       </KeyboardControls>
    );
 }

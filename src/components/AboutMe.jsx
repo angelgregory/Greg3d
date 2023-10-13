@@ -3,6 +3,7 @@ import "animate.css";
 import ag from "../assets/images/ag.png";
 import background from "../assets/images/background-cartoon.jpg";
 import ToFrame from "./ToFrame.jsx";
+import { globalStyles } from "./styles";
 
 const AboutMe = ({ isClicked, setIsClicked }) => {
    ToFrame();
@@ -14,7 +15,9 @@ const AboutMe = ({ isClicked, setIsClicked }) => {
    return (
       <div>
          {/* <link rel="stylesheet" type="text/css" href="/src/index.css" /> */}
-
+         <style jsx global>
+            {globalStyles}
+         </style>
          <div className="flex items-center justify-center h-screen myscreen">
             <div className="relative rounded-[50px] w-[60vw] aspect-[16/9]">
                <div className="relative rounded-[50px] w-[60vw] aspect-[16/9]  overflow-hidden">

@@ -175,6 +175,7 @@ export const Experience = () => {
             {isIntersected ? (
                <div className={"animate__animated animate__bounceInUp"}>
                   <IFrame>
+                     
                      <MySelf
                         isClicked={isClicked}
                         setIsClicked={setIsClicked}

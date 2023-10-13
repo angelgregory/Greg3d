@@ -28,9 +28,12 @@ export const globalStyles = `
     user-select: none; 
   }
   .ctrl-button.click{
-   background-color:white;
-   border: 2px solid red;
-   border-radius: 5px;
+   color: #fff;
+   background: #ccc;
+   border-radius: 6px;
+   box-shadow: -1px 1px 0 #999, -2px 2px 0 #999, -3px 3px 0 #999, -4px 4px 0 #999;
+   font-weight: bold;
+
   }
   .flex{
    display:flex;
