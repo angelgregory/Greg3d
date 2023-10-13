@@ -37,7 +37,7 @@ function App() {
             </Suspense>
          </Canvas>
          <Menu />
-         <div >
+         <div className="xl:hidden">
             <MenuControls />
          </div>
       </KeyboardControls>
