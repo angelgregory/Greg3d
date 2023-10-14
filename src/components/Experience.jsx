@@ -21,6 +21,7 @@ import AboutMe from "./AboutMe";
 import IFrame from "./IFrame.jsx";
 import MySelf from "./MySelf";
 import MenuControls from "./MenuControls";
+import MyWorks from "./MyWorks";
 
 export const Experience = () => {
    const handleButtonClick = () => {
@@ -31,13 +32,14 @@ export const Experience = () => {
    const ref = useRef();
    const [isIntersected, setIsIntersected] = useState(false);
    const [isClicked, setIsClicked] = useState(false);
+   const [onDesk, setOnDesk] = useState(false);
 
-   if (isIntersected) {
-      if (isClicked) {
-         setIsIntersected(false);
-         setIsClicked(false);
-      }
+   if (isClicked) {
+      setIsIntersected(false);
+      setIsClicked(false);
+      setOnDesk(false);
    }
+
    // const [carpetPosition, setCarpetPosition] = useState([-3, -100, 5]);
    const animationSpeed = 2; // Adjust the speed of the animation
    const srcDoc = <AboutMe />;
@@ -92,15 +94,15 @@ export const Experience = () => {
                />
                {/* Desktop */}
                <CuboidCollider
-                  args={[2.5, 1.25, 2]}
-                  position={[-6, 0, -1]}
+                  args={[2.05, 0, 2]}
+                  position={[-6, 1, -1]}
                   sensor
                   onIntersectionEnter={() => {
-                     setIsIntersected(true);
+                     setOnDesk(true);
                      console.log("Entering intersection: isIntersected true");
                   }}
                   onIntersectionExit={() => {
-                     setIsIntersected(false);
+                     setOnDesk(false);
                      console.log("Exiting intersection: isIntersected false");
                   }}
                />
@@ -109,10 +111,10 @@ export const Experience = () => {
                   scale={[4, 4, 4]}
                   position={[-6, 2.25, -1]}
                   rotation-y={[-(Math.PI / 180) * 90]}
-                  onClick={() => {
-                     setIsIntersected(true);
-                     console.log("Entering intersection: isIntersected true");
-                  }}
+                  // onClick={() => {
+                  //    setIsIntersected(true);
+                  //    console.log("Entering intersection: isIntersected true");
+                  // }}
                />
                {/* Chair */}
                <CuboidCollider args={[2, 2, 0.5]} position={[-4.5, 0, -1.5]} />
@@ -142,6 +144,19 @@ export const Experience = () => {
                />
 
                {/* Wardrobe */}
+               <CuboidCollider
+                  args={[2.05, 1, 2]}
+                  position={[-6, 0, 4]}
+                  sensor
+                  onIntersectionEnter={() => {
+                     setIsIntersected(true);
+                     console.log("Entering intersection: isIntersected true");
+                  }}
+                  onIntersectionExit={() => {
+                     setIsIntersected(false);
+                     console.log("Exiting intersection: isIntersected false");
+                  }}
+               />
                <CuboidCollider args={[1.05, 1, 2]} position={[-6, 3, 4]} />
                <Wardrobe
                   scale={[5, 3, 5]}
@@ -175,7 +190,6 @@ export const Experience = () => {
             {isIntersected ? (
                <div className={"animate__animated animate__bounceInUp"}>
                   <IFrame>
-                     
                      <MySelf
                         isClicked={isClicked}
                         setIsClicked={setIsClicked}
@@ -185,7 +199,15 @@ export const Experience = () => {
             ) : (
                ""
             )}
+            {onDesk ? (
+               <IFrame>
+                  <MyWorks isClicked={isClicked} setIsClicked={setIsClicked} />
+               </IFrame>
+            ) : (
+               ""
+            )}
          </Html>
+
          {/* <group onClick={() => alert("Hellooo")}>
             <Billboard
                follow={true}

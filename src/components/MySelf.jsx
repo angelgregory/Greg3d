@@ -20,7 +20,7 @@ import {
    font,
    lgHover,
    globalStyles,
-} from "./styles";
+} from "./MySelfStyles";
 import Questions from "./Questions";
 
 const MySelf = ({ isClicked, setIsClicked }) => {
@@ -93,8 +93,7 @@ const MySelf = ({ isClicked, setIsClicked }) => {
                      </div>
 
                      <div
-
-                     className="content"
+                        className="content"
                         style={{
                            ...col.span2,
                            padding: "2rem 5rem",

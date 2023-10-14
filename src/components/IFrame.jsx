@@ -8,7 +8,7 @@ const IFrame = ({ children }) => {
 
    useEffect(() => {
       if (ref) {
-         ref.style.width = "100%";
+         ref.style.width = "100vw";
          ref.style.height = "100vh";
          ref.style.border = "none";
          ref.style.pointerEvents = "auto";

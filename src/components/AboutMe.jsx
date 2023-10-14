@@ -3,7 +3,7 @@ import "animate.css";
 import ag from "../assets/images/ag.png";
 import background from "../assets/images/background-cartoon.jpg";
 import ToFrame from "./ToFrame.jsx";
-import { globalStyles } from "./styles";
+import { globalStyles } from "./MySelfStyles";
 
 const AboutMe = ({ isClicked, setIsClicked }) => {
    ToFrame();

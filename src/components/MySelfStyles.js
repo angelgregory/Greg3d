@@ -3,7 +3,9 @@
 
 export const globalStyles = `
   @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@700&family=Inter:wght@300;700&display=swap");
-
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
   body {
     margin: 0px;
     padding: 0px;

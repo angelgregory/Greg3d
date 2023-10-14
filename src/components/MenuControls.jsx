@@ -1,7 +1,7 @@
 import React from "react";
 import { useCallback } from "react";
 import { useMemo } from "react";
-import { globalStyles } from "./styles";
+import { globalStyles } from "./MySelfStyles";
 export const Controls = {
    forward: "forward",
    back: "back",
