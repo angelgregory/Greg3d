@@ -3,10 +3,10 @@ import { style, font } from "./MyWorksStyles";
 
 const MyWorks = ({ isClicked, setIsClicked }) => {
    const [isHovered, setIsHovered] = useState(false);
-   const folder = "src/assets/images/folder.png";
-   const folderOpen = "src/assets/images/folder-open.png";
-   const mail = "src/assets/images/mail.png";
-   const mailOpen = "src/assets/images/mail-open.png";
+   const folder = "./src/assets/images/folder.png";
+   const folderOpen = "./src/assets/images/folder-open.png";
+   const mail = "./src/assets/images/mail.png";
+   const mailOpen = "./src/assets/images/mail-open.png";
 
    return (
       <div>
