@@ -6,12 +6,13 @@ import mail from "../assets/images/mail.png";
 import mailOpen from "../assets/images/mail-open.png";
 import bg from "../assets/images/desktop-bg.png";
 import off from "../assets/images/turn-off.png";
+import css from "./MyWork.css";
 const MyWorks = ({ isClicked, setIsClicked }) => {
    const [isHovered, setIsHovered] = useState(false);
 
    return (
       <div>
-         <style>{style}</style>
+         <style>{css}</style>
          <div className="h-screen w-screen flex middle center">
             <div className="relative container page ">
                <img className="bg w-full" src={bg} alt="" />
