@@ -22,7 +22,7 @@ export const style = `
 
   }
   .folder{
-    padding-bottom:20;
+    padding-bottom:5;
   }
   .w-screen{
     width:100vw;
@@ -120,11 +120,21 @@ export const style = `
     height:100%;
   }
   .folder-scale{
+   
     transform: scale(0.7);
   }
   .off:hover{
     transform:scale(0.7)
     
+  }
+  .work-folder{
+    top:-10%;
+    right:-10%;
+
+  }
+  .works{
+    background-color:#F2FDFF;
+    opacity:0.6;
   }
 
 `;

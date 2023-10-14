@@ -6,17 +6,25 @@ import mail from "../assets/images/mail.png";
 import mailOpen from "../assets/images/mail-open.png";
 import bg from "../assets/images/desktop-bg.png";
 import off from "../assets/images/turn-off.png";
-import css from "./MyWork.css";
+
+import WorkFolder from "./WorkFolder";
+import IFrame from "./IFrame";
 const MyWorks = ({ isClicked, setIsClicked }) => {
    const [isHovered, setIsHovered] = useState(false);
-
+   const [isShow, setIsShow] = useState(false);
    return (
       <div>
-         <style>{css}</style>
+         <style>{style}</style>
          <div className="h-screen w-screen flex middle center">
             <div className="relative container page ">
                <img className="bg w-full" src={bg} alt="" />
                <img
+                  onPointerEnter={() => setIsHovered(true)} // Set isIconHovered to true on mouse enter
+                  onPointerLeave={() => setIsHovered(false)} // Set isIconHovered to false on mouse leave
+                  style={{
+                     cursor: isHovered ? "pointer" : "auto",
+                     transition: "transform 0.4s, cursor 0.4s",
+                  }}
                   className="absolute bot off half z-1"
                   src={off}
                   alt=""
@@ -24,9 +32,17 @@ const MyWorks = ({ isClicked, setIsClicked }) => {
                      setIsClicked(true);
                   }}
                />
-               <div className="folders  absolute top h-full">
+               <div className="folders absolute top h-full">
                   <div className="flex flex-col middle">
-                     <div className="folder w-full">
+                     <div
+                        onClick={() => {
+                           setIsShow(!isShow);
+                        }}
+                        onPointerEnter={() => setIsHovered(true)} // Set isIconHovered to true on mouse enter
+                        onPointerLeave={() => setIsHovered(false)} // Set isIconHovered to false on mouse leave
+                        style={{ cursor: isHovered ? "pointer" : "auto" }}
+                        className="folder relative w-full"
+                     >
                         <img
                            className="w-full folder-scale"
                            src={folder}
@@ -42,7 +58,12 @@ const MyWorks = ({ isClicked, setIsClicked }) => {
                            My Works
                         </p>
                      </div>
-                     <div className="folder w-full ">
+                     <div
+                        onPointerEnter={() => setIsHovered(true)} // Set isIconHovered to true on mouse enter
+                        onPointerLeave={() => setIsHovered(false)} // Set isIconHovered to false on mouse leave
+                        style={{ cursor: isHovered ? "pointer" : "auto" }}
+                        className="folder w-full "
+                     >
                         <img
                            className="w-full folder-scale"
                            src={mail}
@@ -60,6 +81,9 @@ const MyWorks = ({ isClicked, setIsClicked }) => {
                </div>
 
                <div className="absolute backpage h-full w-full right-shadow"></div>
+               <div className="absolute work-folder h-full w-full">
+                  {isShow ? <WorkFolder /> : null}
+               </div>
             </div>
          </div>
       </div>
