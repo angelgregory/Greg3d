@@ -3,10 +3,10 @@ import { style, font } from "./MyWorksStyles";
 
 const MyWorks = ({ isClicked, setIsClicked }) => {
    const [isHovered, setIsHovered] = useState(false);
-   const folder = "./src/assets/images/folder.png";
-   const folderOpen = "./src/assets/images/folder-open.png";
-   const mail = "./src/assets/images/mail.png";
-   const mailOpen = "./src/assets/images/mail-open.png";
+   const folder = "src/assets/images/folder.png";
+   const folderOpen = "src/assets/images/folder-open.png";
+   const mail = "src/assets/images/mail.png";
+   const mailOpen = "src/assets/images/mail-open.png";
 
    return (
       <div>
@@ -19,7 +19,7 @@ const MyWorks = ({ isClicked, setIsClicked }) => {
                   alt=""
                />
                <img
-                  className="absolute bot half z-1"
+                  className="absolute bot off half z-1"
                   src="src/assets/images/turn-off.png"
                   alt=""
                   onClick={() => {
@@ -31,12 +31,14 @@ const MyWorks = ({ isClicked, setIsClicked }) => {
                      <div className="folder w-full">
                         <img
                            className="w-full folder-scale"
-                           src={folder}
+                           src="src/assets/images/folder.png"
                            onPointerEnter={(e) =>
-                              (e.currentTarget.src = folderOpen)
+                              (e.currentTarget.src =
+                                 "src/assets/images/folder-open.png")
                            }
                            onPointerLeave={(e) =>
-                              (e.currentTarget.src = folder)
+                              (e.currentTarget.src =
+                                 "src/assets/images/folder.png")
                            }
                            alt=""
                         />
@@ -47,12 +49,16 @@ const MyWorks = ({ isClicked, setIsClicked }) => {
                      <div className="folder w-full ">
                         <img
                            className="w-full folder-scale"
-                           src={mail}
+                           src="src/assets/images/mail.png"
                            alt=""
                            onPointerEnter={(e) =>
-                              (e.currentTarget.src = mailOpen)
+                              (e.currentTarget.src =
+                                 "src/assets/images/mail-open.png")
                            }
-                           onPointerLeave={(e) => (e.currentTarget.src = mail)}
+                           onPointerLeave={(e) =>
+                              (e.currentTarget.src =
+                                 "src/assets/images/mail.png")
+                           }
                         />
                         <p style={{ ...font.nav }} className="folder-name">
                            Email Me

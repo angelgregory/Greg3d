@@ -122,7 +122,10 @@ export const style = `
   .folder-scale{
     transform: scale(0.7);
   }
-
+  .off:hover{
+    transform:scale(0.7)
+    
+  }
 
 `;
 export const font = {
