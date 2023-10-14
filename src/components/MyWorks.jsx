@@ -4,6 +4,8 @@ import folder from "../assets/images/folder.png";
 import folderOpen from "../assets/images/folder-open.png";
 import mail from "../assets/images/mail.png";
 import mailOpen from "../assets/images/mail-open.png";
+import bg from "../assets/images/desktop-bg.png";
+import off from "../assets/images/turn-off.png";
 const MyWorks = ({ isClicked, setIsClicked }) => {
    const [isHovered, setIsHovered] = useState(false);
 
@@ -12,14 +14,10 @@ const MyWorks = ({ isClicked, setIsClicked }) => {
          <style>{style}</style>
          <div className="h-screen w-screen flex middle center">
             <div className="relative container page ">
-               <img
-                  className="bg w-full"
-                  src="src/assets/images/desktop-bg.png"
-                  alt=""
-               />
+               <img className="bg w-full" src={bg} alt="" />
                <img
                   className="absolute bot off half z-1"
-                  src="src/assets/images/turn-off.png"
+                  src={off}
                   alt=""
                   onClick={() => {
                      setIsClicked(true);
