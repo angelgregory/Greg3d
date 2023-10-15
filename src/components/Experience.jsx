@@ -22,6 +22,7 @@ import IFrame from "./IFrame.jsx";
 import MySelf from "./MySelf";
 import MenuControls from "./MenuControls";
 import MyWorks from "./MyWorks";
+import MyWork from "./MyWork";
 
 export const Experience = () => {
    const handleButtonClick = () => {
@@ -201,7 +202,7 @@ export const Experience = () => {
             )}
             {onDesk ? (
                <IFrame>
-                  <MyWorks isClicked={isClicked} setIsClicked={setIsClicked} />
+                  <MyWork isClicked={isClicked} setIsClicked={setIsClicked} />
                </IFrame>
             ) : (
                ""

@@ -7,7 +7,7 @@ const WorkFolder = () => {
       <div className="">
          <style>{iframe}</style>
          {/* <style>{style}</style> */}
-         <div className="flex flex-col flex-col-reverse justify-end">
+         <div className="flex flex-col flex-col-reverse justify-end w-full">
             {/* <div className="works h-full w-full"> */}
             <div>hi</div>
             <div>hello</div>
