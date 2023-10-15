@@ -19,22 +19,20 @@ const MyWork = ({ isClicked, setIsClicked }) => {
          />
          <style>{iframe}</style>
          <div
-            className="flex justify-center items-center h-screen"
+            className="flex justify-center items-center lg:h-screen"
             onClick={() => {
                {
-                  isWork ? setIsWork(false) : null;
+                  isWork ? setIsWork(false) : "";
                }
                console.log(isWork);
             }}
          >
-            <div className="relative w-[70%] h-[70%]">
+            <div className="relative h-screen lg:w-[70%] lg:h-[70%]">
                <img className="w-full h-full" src={bg} alt="" />
                <div className="absolute top-0 h-[90%] w-full">
-                  <div
-                     className={`flex justify-around lg:${"block p-10 h-full"}`}
-                  >
+                  <div className="flex justify-around lg:block lg:p-10 lg:h-full">
                      <div
-                        className=" w-[30%] lg:w-[10%] cursor-pointer pb-5"
+                        className="w-[30%] lg:w-[10%] cursor-pointer lg:pb-5"
                         onClick={() => {
                            setIsWork(!isWork), console.log(isWork);
                         }}
@@ -52,7 +50,7 @@ const MyWork = ({ isClicked, setIsClicked }) => {
                         />
                         <p className="text-center font-nav">My Portfolio</p>
                      </div>
-                     <div className="w-[30%] lg:w-[10%] cursor-pointer">
+                     <div className="w-[30%] lg:w-[10%]  cursor-pointer">
                         <img
                            src={mail}
                            onPointerEnter={(e) =>
@@ -67,7 +65,7 @@ const MyWork = ({ isClicked, setIsClicked }) => {
                </div>
                <div className="absolute bottom-0 w-full h-[10%]">
                   <img
-                     className="absolute left-10 cursor-pointer top-[-30] scale-75 hover:scale-100"
+                     className="absolute right-0 cursor-pointer lg:left-10 lg:top-[-30] scale-75 hover:scale-100"
                      src={off}
                      onClick={() => {
                         setIsClicked(true);

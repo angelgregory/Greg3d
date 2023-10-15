@@ -48,39 +48,41 @@ const MenuControls = () => {
       <div>
          <style>{globalStyles}</style>
          <div className="relative controls">
-            <div className="flex">
-               <div className="ctrl-button blank"></div>
-               <button
-                  className="ctrl-button click"
-                  onPointerEnter={handleButtonMouseDown("W")}
-                  onPointerLeave={handleButtonMouseUp("W")}
-               >
-                  W
-               </button>
-               <div className="ctrl-button"></div>
-            </div>
-            <div className="flex">
-               <button
-                  className="ctrl-button click"
-                  onPointerEnter={handleButtonMouseDown("A")}
-                  onPointerLeave={handleButtonMouseUp("A")}
-               >
-                  A
-               </button>
-               <button
-                  className="ctrl-button click"
-                  onPointerEnter={handleButtonMouseDown("S")}
-                  onPointerLeave={handleButtonMouseUp("S")}
-               >
-                  S
-               </button>
-               <button
-                  className="ctrl-button click"
-                  onPointerEnter={handleButtonMouseDown("D")}
-                  onPointerLeave={handleButtonMouseUp("D")}
-               >
-                  D
-               </button>
+            <div>
+               <div className="flex">
+                  <div className="ctrl-button blank"></div>
+                  <button
+                     className="ctrl-button click"
+                     onPointerEnter={handleButtonMouseDown("W")}
+                     onPointerLeave={handleButtonMouseUp("W")}
+                  >
+                     W
+                  </button>
+                  <div className="ctrl-button"></div>
+               </div>
+               <div className="flex">
+                  <button
+                     className="ctrl-button click"
+                     onPointerEnter={handleButtonMouseDown("A")}
+                     onPointerLeave={handleButtonMouseUp("A")}
+                  >
+                     A
+                  </button>
+                  <button
+                     className="ctrl-button click"
+                     onPointerEnter={handleButtonMouseDown("S")}
+                     onPointerLeave={handleButtonMouseUp("S")}
+                  >
+                     S
+                  </button>
+                  <button
+                     className="ctrl-button click"
+                     onPointerEnter={handleButtonMouseDown("D")}
+                     onPointerLeave={handleButtonMouseUp("D")}
+                  >
+                     D
+                  </button>
+               </div>
             </div>
          </div>
       </div>

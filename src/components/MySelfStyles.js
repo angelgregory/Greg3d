@@ -47,10 +47,11 @@ export const globalStyles = `
    justify-content:space-between
   }
   .controls{ 
+   display:flex;
+   justify-content:center;
    position: fixed;
-   width: 100vw;
+   width:100%;
    height: 100vh;
-   left: 5vw;
    bottom: -80vh;
    }
 `;
