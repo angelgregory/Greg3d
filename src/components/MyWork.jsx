@@ -61,7 +61,7 @@ const MyWork = ({ isClicked, setIsClicked }) => {
                   />
                </div>
                {isWork ? (
-                  <div className="w-full">
+                  <div className="w-[80%] h-[80%] absolute top-5 right-5 rounded-md overflow-clip">
                      <IFrame>
                         <WorkFolder />
                      </IFrame>

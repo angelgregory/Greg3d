@@ -1,14 +1,40 @@
 import React from "react";
 // import { style } from "./MyWorksStyles";
 import iframe from "./iframe.css?inline";
-
+import arayat from "../assets/images/works/arayat.png";
+import coffee from "../assets/images/works/coffee.png";
+import naga from "../assets/images/works/naga.png";
+import phgo from "../assets/images/works/phgo.png";
+import StudyGo from "../assets/images/works/StudyGo.png";
+import irony from "../assets/images/works/THE-IRONY.png";
+import trabahero from "../assets/images/works/trabahero.png";
+import lipatpat from "../assets/images/works/lipatpat-white.png";
 const WorkFolder = () => {
    return (
       <div className="">
          <style>{iframe}</style>
          {/* <style>{style}</style> */}
-         <div className="bg-white w-full h-full rounded-md">
-            <div>asdasdasd</div>
+         <div className="bg-white p-10 flex flex-col">
+            <div className="grid grid-cols-2 p-5">
+               <div className="">
+                  <img className="bg-cover" src={coffee} alt="" />
+               </div>
+               <div className="pl-5 flex flex-col justify-between">
+                  <img className=" " src={StudyGo} alt="" />
+                  <img className=" " src={phgo} alt="" />
+                  <img className=" " src={trabahero} alt="" />
+                  <img className=" " src={arayat} alt="" />
+               </div>
+            </div>
+            <div className="grid grid-cols-2 px-5 ">
+               <div>
+                  <img src={irony} alt="" />
+               </div>
+               <div className="pl-5">
+                  <img src={lipatpat} alt="" />
+               </div>
+            </div>
+            <img src={naga} alt="" />
          </div>
       </div>
    );
