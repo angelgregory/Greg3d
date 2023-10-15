@@ -60,8 +60,8 @@ const MenuControls = () => {
                <div className="flex">
                   <div
                      className="ctrl-button blank"
-                     onPointerEnter={handleButtonMouseDown1("W", "A")   }
-                     onPointerLeave={handleButtonMouseUp1("W", "A")}
+                     onPointerOver={handleButtonMouseDown1("W", "A")   }
+                     onPointerOut={handleButtonMouseUp1("W", "A")}
                   ></div>
                   <button
                      className="ctrl-button click"
