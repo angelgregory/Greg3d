@@ -51,8 +51,7 @@ export const globalStyles = `
    justify-content:center;
    position: fixed;
    width:100%;
-   height: 100vh;
-   bottom: -75vh;
+   bottom: 5vh;
    }
 `;
 

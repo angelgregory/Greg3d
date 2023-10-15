@@ -38,10 +38,18 @@ const MenuControls = () => {
    const handleButtonMouseDown = (key) => () => {
       simulateKeyDown(key);
    };
+   const handleButtonMouseDown1 = (key, key2) => () => {
+      simulateKeyDown(key);
+      simulateKeyDown(key2);
+   };
 
    // Function to handle button release and simulate keyup events
    const handleButtonMouseUp = (key) => () => {
       simulateKeyUp(key);
+   };
+   const handleButtonMouseUp1 = (key, key2) => () => {
+      simulateKeyUp(key);
+      simulateKeyUp(key2);
    };
 
    return (
@@ -50,7 +58,11 @@ const MenuControls = () => {
          <div className="relative controls">
             <div>
                <div className="flex">
-                  <div className="ctrl-button blank"></div>
+                  <div
+                     className="ctrl-button blank"
+                     onPointerEnter={handleButtonMouseDown1("W", "A")   }
+                     onPointerLeave={handleButtonMouseUp1("W", "A")}
+                  ></div>
                   <button
                      className="ctrl-button click"
                      onPointerEnter={handleButtonMouseDown("W")}
