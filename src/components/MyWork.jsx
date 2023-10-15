@@ -54,7 +54,7 @@ const MyWork = ({ isClicked, setIsClicked }) => {
                   <img
                      className="absolute left-10 cursor-pointer top-[-30] scale-75 hover:scale-100"
                      src={off}
-                     onClick={() => {
+                     onPointerDown={() => {
                         setIsClicked(true);
                      }}
                      alt=""
