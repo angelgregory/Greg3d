@@ -5,7 +5,7 @@ import iframe from "./iframe.css?inline"
 const WorkFolder = () => {
    return (
       <div className="">
-         <style>{tw}</style>
+         <style>{iframe}</style>
          {/* <style>{style}</style> */}
          <div className="flex flex-col flex-col-reverse justify-end">
             {/* <div className="works h-full w-full"> */}
