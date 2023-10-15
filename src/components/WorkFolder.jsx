@@ -1,17 +1,14 @@
 import React from "react";
 // import { style } from "./MyWorksStyles";
-import iframe from "./iframe.css?inline"
+import iframe from "./iframe.css?inline";
 
 const WorkFolder = () => {
    return (
       <div className="">
          <style>{iframe}</style>
          {/* <style>{style}</style> */}
-         <div className="flex flex-col flex-col-reverse justify-end w-full">
-            {/* <div className="works h-full w-full"> */}
-            <div>hi</div>
-            <div>hello</div>
-            <div>Okay</div>
+         <div className="bg-white w-full h-full rounded-md">
+            <div>asdasdasd</div>
          </div>
       </div>
    );

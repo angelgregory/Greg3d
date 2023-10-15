@@ -6,7 +6,10 @@ import mail from "../assets/images/mail.png";
 import mailOpen from "../assets/images/mail-open.png";
 import bg from "../assets/images/desktop-bg.png";
 import off from "../assets/images/turn-off.png";
+import WorkFolder from "./WorkFolder";
+import IFrame from "./IFrame";
 const MyWork = ({ isClicked, setIsClicked }) => {
+   const [isWork, setIsWork] = useState(false);
    return (
       <div>
          <style>{iframe}</style>
@@ -14,8 +17,13 @@ const MyWork = ({ isClicked, setIsClicked }) => {
             <div className="relative w-[70%]">
                <img className="w-full aspect-video" src={bg} alt="" />
                <div className="absolute top-0 h-[90%] w-full">
-                  <div className="p-10 ">
-                     <div className="w-[10%] cursor-pointer pb-5">
+                  <div className="p-10 h-full">
+                     <div
+                        className="w-[10%] cursor-pointer pb-5"
+                        onClick={() => {
+                           setIsWork(!isWork), console.log(isWork);
+                        }}
+                     >
                         <img
                            className=""
                            src={folder}
@@ -52,6 +60,13 @@ const MyWork = ({ isClicked, setIsClicked }) => {
                      alt=""
                   />
                </div>
+               {isWork ? (
+                  <div className="w-full">
+                     <IFrame>
+                        <WorkFolder />
+                     </IFrame>
+                  </div>
+               ) : null}
             </div>
          </div>
       </div>

@@ -189,7 +189,7 @@ export const Experience = () => {
          <Html fullscreen zIndexRange={[0, 0]}>
             {/* <link rel="stylesheet" type="text/css" href="/src/index.css" /> */}
             {isIntersected ? (
-               <div className={"animate__animated animate__bounceInUp"}>
+               <div className={"animate__animated animate__bounceInUp h-screen"}>
                   <IFrame>
                      <MySelf
                         isClicked={isClicked}
