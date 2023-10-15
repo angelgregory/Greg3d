@@ -11,8 +11,38 @@ const MyWork = () => {
       <div>
          <style>{iframe}</style>
          <div className="flex justify-center items-center h-screen">
-            <div className="">
-               <img className="relative h-[70%] aspect-video" src={bg} alt="" />
+            <div className="relative w-[70%]">
+               <img className="w-full aspect-video" src={bg} alt="" />
+               <div className="absolute top-0 h-[90%] ">
+                  <div className="p-[2%] ">
+                     <div className="w-[10%]">
+                        <img
+                           className=""
+                           src={folder}
+                           onPointerEnter={(e) =>
+                              (e.currentTarget.src = folderOpen)
+                           }
+                           onPointerLeave={(e) =>
+                              (e.currentTarget.src = folder)
+                           }
+                           alt=""
+                        />
+                        <p className="text-center font-nav">My Portfolio</p>
+                     </div>
+                     <div className="w-[10%]">
+                        <img
+                           src={mail}
+                           onPointerEnter={(e) =>
+                              (e.currentTarget.src = mailOpen)
+                           }
+                           onPointerLeave={(e) => (e.currentTarget.src = mail)}
+                           alt=""
+                        />
+                        <p className="text-center font-nav">Email Me</p>
+                     </div>
+                  </div>
+               </div>
+               <div className="absolute bottom-0 h-[10%]">2</div>
             </div>
          </div>
       </div>
