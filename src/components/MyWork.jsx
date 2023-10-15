@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import iframe from "./iframe.css?inline";
 import folder from "../assets/images/folder.png";
 import folderOpen from "../assets/images/folder-open.png";
@@ -6,16 +6,16 @@ import mail from "../assets/images/mail.png";
 import mailOpen from "../assets/images/mail-open.png";
 import bg from "../assets/images/desktop-bg.png";
 import off from "../assets/images/turn-off.png";
-const MyWork = () => {
+const MyWork = ({ isClicked, setIsClicked }) => {
    return (
       <div>
          <style>{iframe}</style>
          <div className="flex justify-center items-center h-screen">
             <div className="relative w-[70%]">
                <img className="w-full aspect-video" src={bg} alt="" />
-               <div className="absolute top-0 h-[90%] ">
-                  <div className="p-[2%] ">
-                     <div className="w-[10%]">
+               <div className="absolute top-0 h-[90%] w-full">
+                  <div className="p-10 ">
+                     <div className="w-[10%] cursor-pointer pb-5">
                         <img
                            className=""
                            src={folder}
@@ -25,24 +25,33 @@ const MyWork = () => {
                            onPointerLeave={(e) =>
                               (e.currentTarget.src = folder)
                            }
-                           alt=""
+                           alt="My Portfolio"
                         />
                         <p className="text-center font-nav">My Portfolio</p>
                      </div>
-                     <div className="w-[10%]">
+                     <div className="w-[10%] cursor-pointer">
                         <img
                            src={mail}
                            onPointerEnter={(e) =>
                               (e.currentTarget.src = mailOpen)
                            }
                            onPointerLeave={(e) => (e.currentTarget.src = mail)}
-                           alt=""
+                           alt="Email Me"
                         />
                         <p className="text-center font-nav">Email Me</p>
                      </div>
                   </div>
                </div>
-               <div className="absolute bottom-0 h-[10%]">2</div>
+               <div className="absolute bottom-0 w-full h-[10%]">
+                  <img
+                     className="absolute left-10 cursor-pointer top-[-30] scale-75 hover:scale-100"
+                     src={off}
+                     onClick={() => {
+                        setIsClicked(true);
+                     }}
+                     alt=""
+                  />
+               </div>
             </div>
          </div>
       </div>
