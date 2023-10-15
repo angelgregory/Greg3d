@@ -24,8 +24,8 @@ export const globalStyles = `
    color:blue
   }
   .ctrl-button{
-   width:5vh;
-   height:5vh;
+   width:7vh;
+   height:7vh;
    margin:0.5em;
     user-select: none; 
   }
@@ -52,7 +52,7 @@ export const globalStyles = `
    position: fixed;
    width:100%;
    height: 100vh;
-   bottom: -80vh;
+   bottom: -75vh;
    }
 `;
 
