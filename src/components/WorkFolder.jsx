@@ -1,6 +1,7 @@
 import React from "react";
 // import { style } from "./MyWorksStyles";
-import tw from "./tw.css"
+import iframe from "./iframe.css?inline"
+
 const WorkFolder = () => {
    return (
       <div className="">
