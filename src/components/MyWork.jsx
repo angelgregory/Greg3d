@@ -21,7 +21,10 @@ const MyWork = ({ isClicked, setIsClicked }) => {
          <div
             className="flex justify-center items-center h-screen"
             onClick={() => {
-               setIsWork(false), console.log(isWork);
+               {
+                  isWork ? setIsWork(false) : null;
+               }
+               console.log(isWork);
             }}
          >
             <div className="relative w-[70%] h-[70%]">
