@@ -1,11 +1,15 @@
 import React from "react";
-import { style } from "./MyWorksStyles";
+// import { style } from "./MyWorksStyles";
 
 const WorkFolder = () => {
    return (
       <div>
-         <style>{style}</style>
-         <div className="works h-full w-full" >Work Folder</div>
+         {/* <style>{style}</style> */}
+         <div className="flex">
+            {/* <div className="works h-full w-full"> */}
+            <div>hi</div>
+            <div>hello</div>
+         </div>
       </div>
    );
 };
