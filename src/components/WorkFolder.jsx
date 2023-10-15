@@ -1,14 +1,16 @@
 import React from "react";
 // import { style } from "./MyWorksStyles";
-
+import tw from "./tw.css"
 const WorkFolder = () => {
    return (
-      <div>
+      <div className="">
+         <style>{tw}</style>
          {/* <style>{style}</style> */}
-         <div className="flex">
+         <div className="flex flex-col flex-col-reverse justify-end">
             {/* <div className="works h-full w-full"> */}
             <div>hi</div>
             <div>hello</div>
+            <div>Okay</div>
          </div>
       </div>
    );
