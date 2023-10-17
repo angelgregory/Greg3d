@@ -7,6 +7,7 @@ import Menu from "./components/Menu";
 import "./index.css";
 import MenuControls from "./components/MenuControls";
 import MyWork from "./components/MyWork";
+import About from "./components/About";
 export const Controls = {
    forward: "forward",
    back: "back",
@@ -28,6 +29,7 @@ function App() {
    );
    const [isOnDesk, setIsOnDesk] = useState(false);
    const [isClose, setIsClose] = useState(false);
+   const [isOnWardrobe, setIsOnWardRobe] = useState(false);
    if (isClose) {
       setIsOnDesk(false);
       setIsClose(false);
@@ -38,12 +40,23 @@ function App() {
             <color attach="background" args={["#dbecfb"]} />
             <Suspense>
                <Physics debug gravity={[0, -9.8, 0]}>
-                  <Experience isOnDesk={isOnDesk} setIsOnDesk={setIsOnDesk} />
+                  <Experience
+                     isOnDesk={isOnDesk}
+                     setIsOnDesk={setIsOnDesk}
+                     isOnWardrobe={isOnWardrobe}
+                     setIsOnWardRobe={setIsOnWardRobe}
+                  />
                </Physics>
             </Suspense>
          </Canvas>
          <Menu />
-         {isOnDesk ? <MyWork isClose={isClose} setIsClose={setIsClose} /> : ""}
+         {isOnDesk ? (
+            <MyWork isClose={isClose} setIsClose={setIsClose} />
+         ) : isOnWardrobe ? (
+            <About />
+         ) : (
+            ""
+         )}
          <div className="xl:hidden">
             <MenuControls />
          </div>

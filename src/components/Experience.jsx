@@ -24,7 +24,7 @@ import MenuControls from "./MenuControls";
 
 import MyWork from "./MyWork";
 
-export const Experience = ({ isOnDesk, setIsOnDesk }) => {
+export const Experience = ({ isOnDesk, setIsOnDesk, isOnWardrobe, setIsOnWardRobe }) => {
    const handleButtonClick = () => {
       // Triggered when the button inside the canvas is clicked
       console.log("onCanvas");
@@ -149,11 +149,11 @@ export const Experience = ({ isOnDesk, setIsOnDesk }) => {
                   position={[-6, 0, 4]}
                   sensor
                   onIntersectionEnter={() => {
-                     setIsIntersected(true);
+                     setIsOnWardRobe(true);
                      console.log("Entering intersection: isIntersected true");
                   }}
                   onIntersectionExit={() => {
-                     setIsIntersected(false);
+                     setIsOnWardRobe(false);
                      console.log("Exiting intersection: isIntersected false");
                   }}
                />

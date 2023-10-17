@@ -34,16 +34,16 @@ const MyWork = ({ isClose, setIsClose }) => {
    return (
       <div>
          <div className="fixed top-0 left-0 h-screen w-screen z-10">
-            <div className="w-full h-full flex justify-center items-center">
-               <div className="border-2 border-black bg-slate-300 h-full w-full lg:h-[70%] lg:w-[70%] lg:aspect-video rounded-md overflow-clip">
+            <div className="w-[full] h-full flex justify-center items-center">
+               <div className="border-2 border-black bg-slate-300 h-[98%] w-[98%] lg:h-[70%] lg:w-[70%] lg:aspect-video rounded-md overflow-clip">
                   <div className="h-[90%] p-5 flex relative">
                      <div
                         className={
-                           "w-[20%] h-full flex flex-col gap-10 text-center font-nav"
+                           "w-[20%] h-full flex flex-col gap-14 text-center font-nav"
                         }
                      >
                         <div
-                           className="w-[10vh] h-[10vh] flex flex-col items-center"
+                           className="w-[10vh] h-[10vh] flex flex-col items-center "
                            onClick={() => {
                               setIsWorkFolder(!isWorkFolder);
                               console.log(isWorkFolder);
@@ -52,15 +52,16 @@ const MyWork = ({ isClose, setIsClose }) => {
                            <ImageHover
                               image1={folder}
                               image2={folderOpen}
-                              className={"w-full cursor-pointer"}
+                              className={"w-full cursor-pointer "}
                            />
+
                            <p>My Portfolio</p>
                         </div>
-                        <div className="w-[10vh] h-[10vh] flex flex-col items-center">
+                        <div className="w-[10vh] h-[10vh] flex flex-col items-center ">
                            <ImageHover
                               image1={mail}
                               image2={mailOpen}
-                              className={"w-full cursor-pointer"}
+                              className={"w-full cursor-pointer "}
                            />
                            <p>Contact Me</p>
                         </div>
@@ -81,7 +82,7 @@ const MyWork = ({ isClose, setIsClose }) => {
                         )}
                      </div>
                   </div>
-                  <div className="border-t-2 border-black bg-teal-500 w-full h-[10%] flex justify-center items-center">
+                  <div className="border-t-2 border-black bg-teal-500 w-full h-[10%] flex items-center pl-5">
                      <img
                         src={off}
                         alt=""
