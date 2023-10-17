@@ -33,6 +33,7 @@ function App() {
    if (isClose) {
       setIsOnDesk(false);
       setIsClose(false);
+      setIsOnWardRobe(false);
    }
    return (
       <KeyboardControls map={map}>
@@ -53,7 +54,7 @@ function App() {
          {isOnDesk ? (
             <MyWork isClose={isClose} setIsClose={setIsClose} />
          ) : isOnWardrobe ? (
-            <About />
+            <About isClose={isClose} setIsClose={setIsClose} />
          ) : (
             ""
          )}

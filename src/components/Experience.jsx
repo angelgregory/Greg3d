@@ -17,14 +17,16 @@ import { Wardrobe } from "./Furnitures/Wardrobe";
 import { Hamper } from "./Furnitures/Hamper";
 import { useEffect, useRef, useState } from "react";
 import { Boxes } from "./Furnitures/Boxes";
-import AboutMe from "./AboutMe";
 import IFrame from "./IFrame.jsx";
-import MySelf from "./MySelf";
-import MenuControls from "./MenuControls";
 
 import MyWork from "./MyWork";
 
-export const Experience = ({ isOnDesk, setIsOnDesk, isOnWardrobe, setIsOnWardRobe }) => {
+export const Experience = ({
+   isOnDesk,
+   setIsOnDesk,
+   isOnWardrobe,
+   setIsOnWardRobe,
+}) => {
    const handleButtonClick = () => {
       // Triggered when the button inside the canvas is clicked
       console.log("onCanvas");
@@ -42,7 +44,6 @@ export const Experience = ({ isOnDesk, setIsOnDesk, isOnWardrobe, setIsOnWardRob
 
    // const [carpetPosition, setCarpetPosition] = useState([-3, -100, 5]);
    const animationSpeed = 2; // Adjust the speed of the animation
-   const srcDoc = <AboutMe />;
    return (
       <>
          <OrbitControls />

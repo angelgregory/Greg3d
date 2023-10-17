@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import bg from "../assets/images/background-cartoon.jpg";
 import ag from "../assets/images/ag.png";
 import { useRef } from "react";
+import { FaXmark } from "react-icons/fa6";
 import Questions from "./Questions";
 
 const About = ({ isClose, setIsClose }) => {
@@ -35,6 +36,12 @@ const About = ({ isClose, setIsClose }) => {
          <div className="fixed top-0 left-0 h-screen w-screen z-10">
             <div className="w-[full] h-full flex justify-center items-center">
                <div className="bg-white portrait:w-full portrait:h-full landscape:h-[75%] portrait:aspect-[9/16] landscape:aspect-video rounded-3xl portrait:overflow-y-scroll no-scrollbar snap-mandatory snap-y">
+                  <div
+                     className="fixed landscape:top-24 landscape:right-64 top-5 right-5 z-30 text-4xl cursor-pointer"
+                     onClick={() => setIsClose(true)}
+                  >
+                     <FaXmark className="landscape:text-black " />
+                  </div>
                   <div className="landscape:flex h-full relative">
                      <div className="landscape:w-[40%] h-full snap-center">
                         <div className="w-full flex justify-center">
@@ -48,13 +55,13 @@ const About = ({ isClose, setIsClose }) => {
                            <img
                               src={bg}
                               alt=""
-                              className="h-full object-fill"
+                              className="h-full w-full object-cover"
                            />
                         </div>
                      </div>
-                     <div className="landscape:w-[60%] h-full snap-center z-10 p-5 font-nav relative">
-                        <div className="">
-                           <ul className="flex justify-between text-2xl landscape:pr-24">
+                     <div className="landscape:w-[60%] h-full snap-center z-10 p-5 font-nav relative portrait:pt-10">
+                        <div className="cursor-pointer text-2xl ">
+                           <ul className="flex justify-between ">
                               <li onClick={() => liClick(0)}>Who</li>
                               <li onClick={() => liClick(1)}>What</li>
                               <li onClick={() => liClick(2)}>Where</li>
