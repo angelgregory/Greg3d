@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import bg from "../assets/images/background-cartoon.jpg";
 import ag from "../assets/images/ag.png";
 import { useRef } from "react";
+import Questions from "./Questions";
 
 const About = ({ isClose, setIsClose }) => {
    const [isWork, setIsWork] = useState(false);
@@ -33,14 +34,14 @@ const About = ({ isClose, setIsClose }) => {
       <div>
          <div className="fixed top-0 left-0 h-screen w-screen z-10">
             <div className="w-[full] h-full flex justify-center items-center">
-               <div className="bg-white portrait:w-[70%] landscape:h-[75%] portrait:aspect-[9/16] landscape:aspect-video rounded-3xl portrait:overflow-y-scroll no-scrollbar snap-mandatory snap-y">
+               <div className="bg-white portrait:w-full portrait:h-full landscape:h-[75%] portrait:aspect-[9/16] landscape:aspect-video rounded-3xl portrait:overflow-y-scroll no-scrollbar snap-mandatory snap-y">
                   <div className="landscape:flex h-full relative">
                      <div className="landscape:w-[40%] h-full snap-center">
                         <div className="w-full flex justify-center">
                            <img
                               src={ag}
                               alt=""
-                              className="absolute landscape:h-[130%] bottom-0"
+                              className="absolute landscape:h-[130%] object-cover h-full bottom-0"
                            />
                         </div>
                         <div className="w-full h-full overflow-clip landscape:rounded-l-3xl">
@@ -51,8 +52,24 @@ const About = ({ isClose, setIsClose }) => {
                            />
                         </div>
                      </div>
-                     <div className="landscape:w-[60%] h-full snap-center">
-                        2
+                     <div className="landscape:w-[60%] h-full snap-center z-10 p-5 font-nav relative">
+                        <div className="">
+                           <ul className="flex justify-between text-2xl landscape:pr-24">
+                              <li onClick={() => liClick(0)}>Who</li>
+                              <li onClick={() => liClick(1)}>What</li>
+                              <li onClick={() => liClick(2)}>Where</li>
+                              <li onClick={() => liClick(3)}>When</li>
+                              <li onClick={() => liClick(4)}>Why</li>
+                           </ul>
+                        </div>
+                        <div className="h-full flex flex-col justify-center gap-10 px-10">
+                           <h1 className="font-bold text-6xl">
+                              {Questions[showContent].question}
+                           </h1>
+                           <p className="font-light text-2xl">
+                              {Questions[showContent].answer}
+                           </p>
+                        </div>
                      </div>
                   </div>
                </div>

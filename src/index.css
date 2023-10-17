@@ -30,7 +30,7 @@ body {
    overflow: visible;
 }
 
-h1 {
+.menu h1 {
    font-family: sans-serif;
    color: white;
 }
