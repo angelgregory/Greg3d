@@ -21,10 +21,10 @@ import AboutMe from "./AboutMe";
 import IFrame from "./IFrame.jsx";
 import MySelf from "./MySelf";
 import MenuControls from "./MenuControls";
-import MyWorks from "./MyWorks";
+
 import MyWork from "./MyWork";
 
-export const Experience = () => {
+export const Experience = ({ isOnDesk, setIsOnDesk }) => {
    const handleButtonClick = () => {
       // Triggered when the button inside the canvas is clicked
       console.log("onCanvas");
@@ -33,7 +33,6 @@ export const Experience = () => {
    const ref = useRef();
    const [isIntersected, setIsIntersected] = useState(false);
    const [isClicked, setIsClicked] = useState(false);
-   const [onDesk, setOnDesk] = useState(false);
 
    if (isClicked) {
       setIsIntersected(false);
@@ -99,11 +98,11 @@ export const Experience = () => {
                   position={[-6, 1, -1]}
                   sensor
                   onIntersectionEnter={() => {
-                     setOnDesk(true);
+                     setIsOnDesk(true);
                      console.log("Entering intersection: isIntersected true");
                   }}
                   onIntersectionExit={() => {
-                     setOnDesk(false);
+                     setIsOnDesk(false);
                      console.log("Exiting intersection: isIntersected false");
                   }}
                />
@@ -186,12 +185,15 @@ export const Experience = () => {
          <RigidBody position={[-6, 5, 4]} rotation-y={[-(Math.PI / 180) * 90]}>
             <Boxes scale={[5, 5, 5]}></Boxes>
          </RigidBody>
+
          <Html fullscreen zIndexRange={[0, 0]}>
             {/* <link rel="stylesheet" type="text/css" href="/src/index.css" /> */}
-            {isIntersected ? (
-               <div className={"animate__animated animate__bounceInUp h-screen"}>
+            {/* {isIntersected ? (
+               <div
+                  className={"animate__animated animate__bounceInUp h-screen"}
+               >
                   <IFrame>
-                     <MySelf
+                     <AboutMe
                         isClicked={isClicked}
                         setIsClicked={setIsClicked}
                      />
@@ -199,14 +201,14 @@ export const Experience = () => {
                </div>
             ) : (
                ""
-            )}
-            {onDesk ? (
+            )} */}
+            {/* {onDesk ? (
                <IFrame>
                   <MyWork isClicked={isClicked} setIsClicked={setIsClicked} />
                </IFrame>
             ) : (
                ""
-            )}
+            )} */}
          </Html>
 
          {/* <group onClick={() => alert("Hellooo")}>

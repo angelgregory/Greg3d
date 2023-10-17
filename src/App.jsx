@@ -6,6 +6,7 @@ import { Experience } from "./components/Experience";
 import Menu from "./components/Menu";
 import "./index.css";
 import MenuControls from "./components/MenuControls";
+import MyWork from "./components/MyWork";
 export const Controls = {
    forward: "forward",
    back: "back",
@@ -25,18 +26,24 @@ function App() {
       ],
       []
    );
-
+   const [isOnDesk, setIsOnDesk] = useState(false);
+   const [isClose, setIsClose] = useState(false);
+   if (isClose) {
+      setIsOnDesk(false);
+      setIsClose(false);
+   }
    return (
       <KeyboardControls map={map}>
          <Canvas shadows camera={{ position: [0, 6, 42], fov: 80 }}>
             <color attach="background" args={["#dbecfb"]} />
             <Suspense>
                <Physics debug gravity={[0, -9.8, 0]}>
-                  <Experience />
+                  <Experience isOnDesk={isOnDesk} setIsOnDesk={setIsOnDesk} />
                </Physics>
             </Suspense>
          </Canvas>
          <Menu />
+         {isOnDesk ? <MyWork isClose={isClose} setIsClose={setIsClose} /> : ""}
          <div className="xl:hidden">
             <MenuControls />
          </div>

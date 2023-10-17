@@ -8,80 +8,72 @@ import bg from "../assets/images/desktop-bg.png";
 import off from "../assets/images/turn-off.png";
 import WorkFolder from "./WorkFolder";
 import IFrame from "./IFrame";
+import { useRef } from "react";
 
-const MyWork = ({ isClicked, setIsClicked }) => {
+const MyWork = ({ isClose, setIsClose }) => {
    const [isWork, setIsWork] = useState(false);
+   const [isWorkFolder, setIsWorkFolder] = useState(false);
+   const ImageHover = ({ image1, image2, className }) => {
+      const imageRef = useRef(null);
+
+      return (
+         <img
+            onPointerEnter={() => {
+               imageRef.current.src = image2;
+            }}
+            onPointerLeave={() => {
+               imageRef.current.src = image1;
+            }}
+            src={image1}
+            alt=""
+            ref={imageRef}
+            className={className}
+         />
+      );
+   };
    return (
       <div>
-         <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-         />
-         <style>{iframe}</style>
-         <div
-            className="flex justify-center items-center lg:h-screen"
-            onClick={() => {
-               {
-                  isWork ? setIsWork(false) : "";
-               }
-               console.log(isWork);
-            }}
-         >
-            <div className="relative h-screen lg:w-[70%] lg:h-[70%]">
-               <img className="w-full h-full" src={bg} alt="" />
-               <div className="absolute top-0 h-[90%] w-full">
-                  <div className="flex justify-around lg:block lg:p-10 lg:h-full">
-                     <div
-                        className="w-[30%] lg:w-[10%] cursor-pointer lg:pb-5"
+         <div className="fixed top-0 left-0 h-screen w-screen z-10">
+            <div className="w-full h-full flex justify-center items-center">
+               <div className="border-2 border-black bg-slate-300 h-full w-full lg:h-[70%] lg:w-[70%] lg:aspect-video rounded-md overflow-clip">
+                  <div className="h-[90%] p-10 flex ">
+                     <div className=" w-[20%] h-full flex flex-col gap-10 text-center font-nav">
+                        <div
+                           className="w-[10vh] h-[10vh] flex flex-col items-center"
+                           onClick={() => {
+                              setIsWorkFolder(true);
+                              console.log(isWorkFolder);
+                           }}
+                        >
+                           <ImageHover
+                              image1={folder}
+                              image2={folderOpen}
+                              className={"w-full cursor-pointer"}
+                           />
+                           <p>My Portfolio</p>
+                        </div>
+                        <div className="w-[10vh] h-[10vh] flex flex-col items-center">
+                           <ImageHover
+                              image1={mail}
+                              image2={mailOpen}
+                              className={"w-full cursor-pointer"}
+                           />
+                           <p>Contact Me</p>
+                        </div>
+                     </div>
+                     <div className="w-[80%]">123123</div>
+                  </div>
+                  <div className="border-t-2 border-black bg-teal-500 w-full h-[10%] flex justify-center items-center">
+                     <img
+                        src={off}
+                        alt=""
+                        className="h-[80%] hover:h-[95%] cursor-pointer"
                         onClick={() => {
-                           setIsWork(!isWork), console.log(isWork);
+                           setIsClose(true);
                         }}
-                     >
-                        <img
-                           className=""
-                           src={folder}
-                           onPointerEnter={(e) =>
-                              (e.currentTarget.src = folderOpen)
-                           }
-                           onPointerLeave={(e) =>
-                              (e.currentTarget.src = folder)
-                           }
-                           alt="My Portfolio"
-                        />
-                        <p className="text-center font-nav">My Portfolio</p>
-                     </div>
-                     <div className="w-[30%] lg:w-[10%]  cursor-pointer">
-                        <img
-                           src={mail}
-                           onPointerEnter={(e) =>
-                              (e.currentTarget.src = mailOpen)
-                           }
-                           onPointerLeave={(e) => (e.currentTarget.src = mail)}
-                           alt="Email Me"
-                        />
-                        <p className="text-center font-nav">Contact Me</p>
-                     </div>
+                     />
                   </div>
                </div>
-               <div className="absolute bottom-0 w-full h-[10%]">
-                  <img
-                     className="absolute right-0 cursor-pointer lg:left-10 lg:top-[-30] scale-75 hover:scale-100"
-                     src={off}
-                     onClick={() => {
-                        setIsClicked(true);
-                     }}
-                     alt=""
-                  />
-               </div>
-               {isWork ? (
-                  <div
-                     className={`w-[80%] h-[80%] absolute top-5 right-5 rounded-md overflow-clip`}
-                  >
-                     <IFrame>
-                        <WorkFolder />
-                     </IFrame>
-                  </div>
-               ) : null}
             </div>
          </div>
       </div>

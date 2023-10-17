@@ -14,27 +14,27 @@ const WorkFolder = () => {
       <div className="">
          <style>{iframe}</style>
          {/* <style>{style}</style> */}
-         <div className="bg-white p-10 flex flex-col">
-            <div className="grid grid-cols-2 p-5">
+         <div className="bg-white flex flex-col">
+            <div className="grid grid-cols-2 pb-2">
                <div className="">
                   <img className="bg-cover" src={coffee} alt="" />
                </div>
-               <div className="pl-5 flex flex-col justify-between">
+               <div className="pl-2 flex flex-col justify-between">
                   <img className=" " src={StudyGo} alt="" />
                   <img className=" " src={phgo} alt="" />
                   <img className=" " src={trabahero} alt="" />
                   <img className=" " src={arayat} alt="" />
                </div>
             </div>
-            <div className="grid grid-cols-2 px-5 ">
+            <img src={naga} alt="" />
+            <div className="grid grid-cols-2 ">
                <div>
                   <img src={irony} alt="" />
                </div>
-               <div className="pl-5">
+               <div className="pl-2">
                   <img src={lipatpat} alt="" />
                </div>
             </div>
-            <img src={naga} alt="" />
          </div>
       </div>
    );
