@@ -40,7 +40,8 @@ function App() {
          <Canvas shadows camera={{ position: [0, 6, 42], fov: 80 }}>
             <color attach="background" args={["#dbecfb"]} />
             <Suspense>
-               <Physics debug gravity={[0, -9.8, 0]}>
+               {/* you can use Physics debug to show guiding lines on objects --greg */}
+               <Physics gravity={[0, -9.8, 0]}>
                   <Experience
                      isOnDesk={isOnDesk}
                      setIsOnDesk={setIsOnDesk}

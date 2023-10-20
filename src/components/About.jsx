@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import bg from "../assets/images/background-cartoon.jpg";
 import ag from "../assets/images/ag.png";
 import { useRef } from "react";
-import { FaXmark } from "react-icons/fa6";
+import { IoReturnDownBackOutline } from "react-icons/io5";
 import Questions from "./Questions";
 
 const About = ({ isClose, setIsClose }) => {
@@ -35,12 +35,12 @@ const About = ({ isClose, setIsClose }) => {
       <div>
          <div className="fixed top-0 left-0 h-screen w-screen z-10">
             <div className="w-[full] h-full flex justify-center items-center">
-               <div className="bg-white portrait:w-full portrait:h-full landscape:h-[75%] portrait:aspect-[9/16] landscape:aspect-video rounded-3xl portrait:overflow-y-scroll no-scrollbar snap-mandatory snap-y">
+               <div className="bg-white portrait:w-full portrait:h-full landscape:h-[75%] portrait:aspect-[9/16] landscape:aspect-video rounded-3xl portrait:overflow-y-scroll no-scrollbar snap-mandatory snap-y relative">
                   <div
-                     className="fixed landscape:top-24 landscape:right-64 top-5 right-5 z-30 text-4xl cursor-pointer"
+                     className="absolute z-10 bg-white rounded-full w-16 text-4xl flex justify-center m-4 cursor-pointer"
                      onClick={() => setIsClose(true)}
                   >
-                     <FaXmark className="landscape:text-black " />
+                     <IoReturnDownBackOutline className=" text-slate-800" />
                   </div>
                   <div className="landscape:flex h-full relative">
                      <div className="landscape:w-[40%] h-full snap-center">
@@ -59,8 +59,8 @@ const About = ({ isClose, setIsClose }) => {
                            />
                         </div>
                      </div>
-                     <div className="landscape:w-[60%] h-full snap-center z-10 p-5 font-nav relative portrait:pt-10">
-                        <div className="cursor-pointer text-2xl ">
+                     <div className="landscape:w-[60%] h-full snap-center z-30 p-5 font-nav relative portrait:pt-10 landscape:px-20">
+                        <div className="cursor-pointer lg:text-2xl ">
                            <ul className="flex justify-between ">
                               <li onClick={() => liClick(0)}>Who</li>
                               <li onClick={() => liClick(1)}>What</li>
@@ -70,10 +70,10 @@ const About = ({ isClose, setIsClose }) => {
                            </ul>
                         </div>
                         <div className="h-full flex flex-col justify-center gap-10 px-10">
-                           <h1 className="font-bold text-6xl">
+                           <h1 className="font-bold lg:text-6xl text-lg">
                               {Questions[showContent].question}
                            </h1>
-                           <p className="font-light text-2xl">
+                           <p className="font-light lg:text-2xl text-md">
                               {Questions[showContent].answer}
                            </p>
                         </div>
