@@ -8,6 +8,7 @@ import "./index.css";
 import MenuControls from "./components/MenuControls";
 import MyWork from "./components/MyWork";
 import About from "./components/About";
+import Instructions from "./components/Instructions";
 export const Controls = {
    forward: "forward",
    back: "back",
@@ -62,6 +63,7 @@ function App() {
          <div className="xl:hidden">
             <MenuControls />
          </div>
+         {/* <Instructions /> */}
       </KeyboardControls>
    );
 }
