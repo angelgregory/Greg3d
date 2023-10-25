@@ -21,14 +21,14 @@ const Menu = (open, setIsOpen) => {
                      <span class="absolute w-0 h-0 transition-all duration-500 ease-out bg-cyan-50 rounded-full group-hover:w-56 group-hover:h-56"></span>
                      <span class="relative">Walk Around</span>
                   </a>
-                  <a
+                  {/* <a
                      onClick={handleButtonClick}
                      href="#_"
                      class="relative inline-flex items-center justify-center px-10 py-4 overflow-hidden tracking-tighter text-white bg-gray-800 rounded-lg group hover:text-black"
                   >
                      <span class="absolute w-0 h-0 transition-all duration-500 ease-out bg-cyan-50 rounded-full group-hover:w-56 group-hover:h-56"></span>
                      <span class="relative">Controls</span>
-                  </a>
+                  </a> */}
                   {/* Add your overlay content here */}
 
                   {/* Add your overlay content here */}

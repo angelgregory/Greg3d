@@ -57,14 +57,14 @@ const MyWork = ({ isClose, setIsClose }) => {
 
                            <p>My Portfolio</p>
                         </div>
-                        <div className="w-[10vh] h-[10vh] flex flex-col items-center ">
+                        {/* <div className="w-[10vh] h-[10vh] flex flex-col items-center ">
                            <ImageHover
                               image1={mail}
                               image2={mailOpen}
                               className={"w-full cursor-pointer "}
                            />
                            <p>Contact Me</p>
-                        </div>
+                        </div> */}
                      </div>
                      <div
                         className={`${
