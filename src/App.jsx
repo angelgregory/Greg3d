@@ -37,10 +37,11 @@ function App() {
       setIsClose(false);
       setIsOnWardRobe(false);
    }
+   const title = "Greg's Portfolio";
    return (
       <KeyboardControls map={map}>
          <Helmet>
-            <title>Greg's Portfolio</title>
+            <title>{title}</title>
          </Helmet>
          <Canvas shadows camera={{ position: [0, 6, 42], fov: 80 }}>
             <color attach="background" args={["#dbecfb"]} />
