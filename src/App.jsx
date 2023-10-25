@@ -9,6 +9,7 @@ import MenuControls from "./components/MenuControls";
 import MyWork from "./components/MyWork";
 import About from "./components/About";
 import Instructions from "./components/Instructions";
+import { Helmet } from "react-helmet";
 export const Controls = {
    forward: "forward",
    back: "back",
@@ -38,6 +39,9 @@ function App() {
    }
    return (
       <KeyboardControls map={map}>
+         <Helmet>
+            <title>Greg's Portfolio</title>
+         </Helmet>
          <Canvas shadows camera={{ position: [0, 6, 42], fov: 80 }}>
             <color attach="background" args={["#dbecfb"]} />
             <Suspense>
