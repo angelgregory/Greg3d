@@ -10,6 +10,7 @@ import MyWork from "./components/MyWork";
 import About from "./components/About";
 import Instructions from "./components/Instructions";
 import { Helmet } from "react-helmet";
+import favicon from "./assets/images/icon.png";
 export const Controls = {
    forward: "forward",
    back: "back",
@@ -42,6 +43,7 @@ function App() {
       <KeyboardControls map={map}>
          <Helmet>
             <title>{title}</title>
+            <link rel="icon" type="image/png" href={favicon} sizes="16x16" />
          </Helmet>
          <Canvas shadows camera={{ position: [0, 6, 42], fov: 80 }}>
             <color attach="background" args={["#dbecfb"]} />
