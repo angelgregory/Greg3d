@@ -94,7 +94,7 @@ export const Experience = ({
                />
                {/* Bed */}
                <CuboidCollider
-                  args={[1.5, 1.5, 3]}
+                  args={[1.5, 4, 3]}
                   position={[5.5, 0, -4]}
                   sensor
                   onIntersectionEnter={() => {

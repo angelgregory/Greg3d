@@ -1,7 +1,20 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Dialogue from "./Dialogues";
 
 const TextBubble = ({ query }) => {
+   const [isVisible, setIsVisible] = useState(true);
+
+   useEffect(() => {
+      const timer = setTimeout(() => {
+         setIsVisible(false);
+      }, 3000); // Change 5000 to the number of milliseconds you want (5 seconds in this example)
+
+      return () => clearTimeout(timer); // Clear the timer when the component unmounts
+   }, []);
+
+   if (!isVisible) {
+      return null; // Return null when you want to "close" the component
+   }
    let length = query.length;
    return (
       <div>
