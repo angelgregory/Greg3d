@@ -11,9 +11,15 @@ export const Controls = {
 };
 const MenuControls = () => {
    const simulateKeyDown = (key) => {
+      let code;
+      if (key === "Space") {
+         code = "Space";
+      } else {
+         code = `Key${key}`;
+      }
       const event = new KeyboardEvent("keydown", {
          key,
-         code: `Key${key}`,
+         code,
          which: key.charCodeAt(0),
          keyCode: key.charCodeAt(0),
       });
@@ -21,11 +27,32 @@ const MenuControls = () => {
       // Dispatch the event on the document
       document.dispatchEvent(event);
    };
+   const keyCodes = () => {
+      document.addEventListener("keydown", function (e) {
+         console.log(
+            "keyCodeDEP",
+            e.which,
+            "key",
+            e.key,
+            "code",
+            e.code,
+            "location",
+            e.location
+         );
+      });
+   };
+   keyCodes();
 
    const simulateKeyUp = (key) => {
+      let code;
+      if (key === "Space") {
+         code = "Space";
+      } else {
+         code = `Key${key}`;
+      }
       const event = new KeyboardEvent("keyup", {
          key,
-         code: `Key${key}`,
+         code,
          which: key.charCodeAt(0),
          keyCode: key.charCodeAt(0),
       });
@@ -48,41 +75,51 @@ const MenuControls = () => {
       <div>
          <style>{globalStyles}</style>
          <div className="relative controls z-10">
-            <div>
-               <div className="flex">
-                  <div className="ctrl-button blank"></div>
-                  <button
-                     className="ctrl-button click"
-                     onPointerEnter={handleButtonMouseDown("W")}
-                     onPointerLeave={handleButtonMouseUp("W")}
-                  >
-                     W
-                  </button>
-                  <div className="ctrl-button"></div>
+            <div className="flex justify-between">
+               <div>
+                  <div className="flex">
+                     <div className="ctrl-button blank"></div>
+                     <button
+                        className="ctrl-button click"
+                        onPointerEnter={handleButtonMouseDown("W")}
+                        onPointerLeave={handleButtonMouseUp("W")}
+                     >
+                        W
+                     </button>
+                     <div className="ctrl-button"></div>
+                  </div>
+                  <div className="flex">
+                     <button
+                        className="ctrl-button click"
+                        onPointerEnter={handleButtonMouseDown("A")}
+                        onPointerLeave={handleButtonMouseUp("A")}
+                     >
+                        A
+                     </button>
+                     <button
+                        className="ctrl-button click"
+                        onPointerEnter={handleButtonMouseDown("S")}
+                        onPointerLeave={handleButtonMouseUp("S")}
+                     >
+                        S
+                     </button>
+                     <button
+                        className="ctrl-button click"
+                        onPointerEnter={handleButtonMouseDown("D")}
+                        onPointerLeave={handleButtonMouseUp("D")}
+                     >
+                        D
+                     </button>
+                  </div>
                </div>
-               <div className="flex">
-                  <button
-                     className="ctrl-button click"
-                     onPointerEnter={handleButtonMouseDown("A")}
-                     onPointerLeave={handleButtonMouseUp("A")}
-                  >
-                     A
-                  </button>
-                  <button
-                     className="ctrl-button click"
-                     onPointerEnter={handleButtonMouseDown("S")}
-                     onPointerLeave={handleButtonMouseUp("S")}
-                  >
-                     S
-                  </button>
-                  <button
-                     className="ctrl-button click"
-                     onPointerEnter={handleButtonMouseDown("D")}
-                     onPointerLeave={handleButtonMouseUp("D")}
-                  >
-                     D
-                  </button>
-               </div>
+
+               <button
+                  className="jump"
+                  onPointerEnter={handleButtonMouseDown("Space")}
+                  onPointerLeave={handleButtonMouseUp("Space")}
+               >
+                  Jump
+               </button>
             </div>
          </div>
       </div>

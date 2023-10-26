@@ -7,7 +7,7 @@ const Questions = [
    {
       question: "What is Greg?",
       answer:
-         "A Software Developer, UIX and Grahpic Designer, known for his enthusiasm and creativity. He’s passionate about turning ideas into reality and always eager to solve complex problems.",
+         "A Software Developer, UIX and Graphic Designer, known for his enthusiasm and creativity. He’s passionate about turning ideas into reality and always eager to solve complex problems.",
    },
    {
       question: "Where is Greg?",
