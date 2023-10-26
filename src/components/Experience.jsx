@@ -145,7 +145,7 @@ export const Experience = ({
                />
                {/* Cabinet */}
                <CuboidCollider
-                  args={[2.5, 1, 1]}
+                  args={[3, 6, 0.5]}
                   position={[-1, 0, -6]}
                   sensor
                   onIntersectionEnter={() => {
