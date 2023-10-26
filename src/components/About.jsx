@@ -67,13 +67,21 @@ const About = ({ isClose, setIsClose }) => {
                      </div>
                      <div className="landscape:w-[60%] h-full snap-center z-30 p-5 font-nav relative portrait:pt-10 landscape:px-20">
                         <div className="cursor-pointer lg:text-2xl ">
-                           <ul className="flex justify-between ">
+                           <ul className="flex justify-between">
+
+                              <li><input type="radio" name="option" id="1" value="1" className="peer hidden" defaultChecked/><label htmlFor="1" className="block cursor-pointer select-none text-center peer-checked:underline " onClick={()=>liClick(0)}>Who</label></li>
+                              <li><input type="radio" name="option" id="2" value="2" className="peer hidden"/><label htmlFor="2" className="block cursor-pointer select-none text-center peer-checked:underline " onClick={()=>liClick(1)}>What</label></li>
+                              <li><input type="radio" name="option" id="3" value="3" className="peer hidden"/><label htmlFor="3" className="block cursor-pointer select-none text-center peer-checked:underline " onClick={()=>liClick(2)}>Where</label></li>
+                              <li><input type="radio" name="option" id="4" value="4" className="peer hidden"/><label htmlFor="4" className="block cursor-pointer select-none text-center peer-checked:underline " onClick={()=>liClick(3)}>When</label></li>
+                              <li><input type="radio" name="option" id="5" value="5" className="peer hidden"/><label htmlFor="5" className="block cursor-pointer select-none text-center peer-checked:underline " onClick={()=>liClick(4)}>Why</label></li>
+                           </ul>
+                           {/* <ul className="flex justify-between ">
                               <li onClick={() => liClick(0)}>Who</li>
                               <li onClick={() => liClick(1)}>What</li>
                               <li onClick={() => liClick(2)}>Where</li>
                               <li onClick={() => liClick(3)}>When</li>
                               <li onClick={() => liClick(4)}>Why</li>
-                           </ul>
+                           </ul> */}
                         </div>
                         <div className="h-full flex flex-col justify-center gap-10 px-10">
                            <h1 className="font-bold lg:text-6xl text-lg">

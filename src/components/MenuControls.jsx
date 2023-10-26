@@ -75,7 +75,7 @@ const MenuControls = () => {
       <div>
          <style>{globalStyles}</style>
          <div className="relative controls z-10">
-            <div className="flex justify-between">
+            <div className="flex w-full justify-between items-center">
                <div>
                   <div className="flex">
                      <div className="ctrl-button blank"></div>
