@@ -47,7 +47,7 @@ const MenuControls = () => {
    return (
       <div>
          <style>{globalStyles}</style>
-         <div className="relative controls">
+         <div className="relative controls z-10">
             <div>
                <div className="flex">
                   <div className="ctrl-button blank"></div>

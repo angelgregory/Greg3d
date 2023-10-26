@@ -11,6 +11,7 @@ import About from "./components/About";
 import Instructions from "./components/Instructions";
 import { Helmet } from "react-helmet";
 import favicon from "./assets/images/icon.png";
+import TextBubble from "./components/TextBubble";
 export const Controls = {
    forward: "forward",
    back: "back",
@@ -33,10 +34,12 @@ function App() {
    const [isOnDesk, setIsOnDesk] = useState(false);
    const [isClose, setIsClose] = useState(false);
    const [isOnWardrobe, setIsOnWardRobe] = useState(false);
+   const [isOnCabinet, setIsOnCabinet] = useState(false);
    if (isClose) {
       setIsOnDesk(false);
       setIsClose(false);
       setIsOnWardRobe(false);
+      setIsOnCabinet(false);
    }
    const title = "Greg's Portfolio";
    return (
@@ -49,12 +52,14 @@ function App() {
             <color attach="background" args={["#dbecfb"]} />
             <Suspense>
                {/* you can use Physics debug to show guiding lines on objects --greg */}
-               <Physics gravity={[0, -9.8, 0]}>
+               <Physics debug gravity={[0, -9.8, 0]}>
                   <Experience
                      isOnDesk={isOnDesk}
                      setIsOnDesk={setIsOnDesk}
                      isOnWardrobe={isOnWardrobe}
                      setIsOnWardRobe={setIsOnWardRobe}
+                     isOnCabinet={isOnCabinet}
+                     setIsOnCabinet={setIsOnCabinet}
                   />
                </Physics>
             </Suspense>
@@ -70,6 +75,11 @@ function App() {
          <div className="xl:hidden">
             <MenuControls />
          </div>
+         {isOnCabinet ? (
+            <div>
+               <TextBubble />
+            </div>
+         ) : null}
          {/* <Instructions /> */}
       </KeyboardControls>
    );

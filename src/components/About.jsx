@@ -33,7 +33,7 @@ const About = ({ isClose, setIsClose }) => {
    };
    return (
       <div>
-         <div className="fixed top-0 left-0 h-screen w-screen z-10">
+         <div className="fixed top-0 left-0 h-screen w-screen z-20">
            {/* Esc-hatch - Click Outside */}
             <div
                className="fixed top-0 left-0 h-screen w-screen"

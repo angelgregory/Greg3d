@@ -103,6 +103,7 @@ const CharacterController = () => {
             </group>
          </RigidBody>
       </group>
+      
    );
 };
 

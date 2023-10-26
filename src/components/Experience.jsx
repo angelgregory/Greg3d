@@ -26,6 +26,8 @@ export const Experience = ({
    setIsOnDesk,
    isOnWardrobe,
    setIsOnWardRobe,
+   isOnCabinet,
+   setIsOnCabinet,
 }) => {
    const handleButtonClick = () => {
       // Triggered when the button inside the canvas is clicked
@@ -125,6 +127,19 @@ export const Experience = ({
                   rotation-y={[-(Math.PI / 180) * 90]}
                />
                {/* Cabinet */}
+               <CuboidCollider
+                  args={[2.5, 1, 1]}
+                  position={[-1, 0, -6]}
+                  sensor
+                  onIntersectionEnter={() => {
+                     setIsOnCabinet(true);
+                     console.log("Entering intersection: isIntersected true");
+                  }}
+                  onIntersectionExit={() => {
+                     setIsOnCabinet(false);
+                     console.log("Exiting intersection: isIntersected false");
+                  }}
+               />
                <CuboidCollider args={[3, 6, 0.5]} position={[-1, 0, -6]} />
                <Cabinet
                   scale={[5, 5, 5]}
@@ -236,6 +251,7 @@ export const Experience = ({
                </div>
             </Html>
          </group> */}
+
          <CharacterController />
          {/* End of Stage */}
       </>
