@@ -1,7 +1,7 @@
 import { Html, KeyboardControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { Physics } from "@react-three/rapier";
-import { Suspense, useMemo, useState } from "react";
+import { Suspense, useEffect, useMemo, useState } from "react";
 import { Experience } from "./components/Experience";
 import Menu from "./components/Menu";
 import "./index.css";
@@ -31,15 +31,26 @@ function App() {
       ],
       []
    );
+
    const [isOnDesk, setIsOnDesk] = useState(false);
    const [isClose, setIsClose] = useState(false);
    const [isOnWardrobe, setIsOnWardRobe] = useState(false);
    const [isOnCabinet, setIsOnCabinet] = useState(false);
+   const [isOnBed, setIsOnBed] = useState(false);
+   const [isOnFan, setIsOnFan] = useState(false);
+   // useEffect(() => {
+   //    if (isOnCabinet) {
+   //       place = "cabinet";
+   //    }
+   // }, []);
+
    if (isClose) {
       setIsOnDesk(false);
       setIsClose(false);
       setIsOnWardRobe(false);
       setIsOnCabinet(false);
+      setIsOnBed(false);
+      setIsOnFan(false);
    }
    const title = "Greg's Portfolio";
    return (
@@ -52,7 +63,10 @@ function App() {
             <color attach="background" args={["#dbecfb"]} />
             <Suspense>
                {/* you can use Physics debug to show guiding lines on objects --greg */}
-               <Physics gravity={[0, -9.8, 0]}>
+               <Physics
+                  //debug
+                  gravity={[0, -9.8, 0]}
+               >
                   <Experience
                      isOnDesk={isOnDesk}
                      setIsOnDesk={setIsOnDesk}
@@ -60,6 +74,10 @@ function App() {
                      setIsOnWardRobe={setIsOnWardRobe}
                      isOnCabinet={isOnCabinet}
                      setIsOnCabinet={setIsOnCabinet}
+                     isOnBed={isOnBed}
+                     setIsOnBed={setIsOnBed}
+                     isOnFan={isOnFan}
+                     setIsOnFan={setIsOnFan}
                   />
                </Physics>
             </Suspense>
@@ -75,9 +93,19 @@ function App() {
          <div className="xl:hidden">
             <MenuControls />
          </div>
-         {isOnCabinet ? (
+         {isOnCabinet || isOnBed || isOnFan ? (
             <div>
-               <TextBubble />
+               <TextBubble
+                  query={
+                     isOnCabinet
+                        ? "cabinet"
+                        : isOnBed
+                        ? "bed"
+                        : isOnFan
+                        ? "fan"
+                        : ""
+                  }
+               />
             </div>
          ) : null}
          {/* <Instructions /> */}

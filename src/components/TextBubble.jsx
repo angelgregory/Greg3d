@@ -1,13 +1,22 @@
 import React from "react";
+import Dialogue from "./Dialogues";
 
-const TextBubble = () => {
+const TextBubble = ({ query }) => {
+   let length = query.length;
    return (
       <div>
          <div className="fixed top-0 left-0 h-screen w-screen">
             <div className="absolute top-[33%] flex w-full justify-center opacity-70 ">
                <div className="bg-white rounded-full p-5">
-                  <h1 className="animate-typing overflow-hidden whitespace-nowrap">
-                     nothing to see here yet
+                  <h1
+                     className={
+                        length < 5
+                           ? "animate-typingShort overflow-hidden whitespace-nowrap font-nav"
+                           : "animate-typingLong overflow-hidden whitespace-nowrap font-nav"
+                     }
+                  >
+                     {console.log(length)}
+                     {Dialogue[0][query]}
                   </h1>
                </div>
                <div

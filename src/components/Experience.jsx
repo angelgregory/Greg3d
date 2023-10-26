@@ -28,6 +28,10 @@ export const Experience = ({
    setIsOnWardRobe,
    isOnCabinet,
    setIsOnCabinet,
+   isOnBed,
+   setIsOnBed,
+   isOnFan,
+   setIsOnFan,
 }) => {
    const handleButtonClick = () => {
       // Triggered when the button inside the canvas is clicked
@@ -89,6 +93,19 @@ export const Experience = ({
                   color={"#aa9acd"}
                />
                {/* Bed */}
+               <CuboidCollider
+                  args={[1.5, 1.5, 3]}
+                  position={[5.5, 0, -4]}
+                  sensor
+                  onIntersectionEnter={() => {
+                     setIsOnBed(true);
+                     console.log("Entering intersection: isIntersected true");
+                  }}
+                  onIntersectionExit={() => {
+                     setIsOnBed(false);
+                     console.log("Exiting intersection: isIntersected false");
+                  }}
+               />
                <CuboidCollider args={[1.7, 1.25, 3]} position={[5.5, 0, -4]} />
                <Bed
                   scale={[4, 4, 4]}
@@ -180,6 +197,19 @@ export const Experience = ({
                   rotation-y={[-(Math.PI / 180) * 90]}
                />
                {/* Fan */}
+               <CuboidCollider
+                  args={[1, 2.25, 1]}
+                  position={[-6, 0, -5]}
+                  sensor
+                  onIntersectionEnter={() => {
+                     setIsOnFan(true);
+                     console.log("Entering intersection: isIntersected true");
+                  }}
+                  onIntersectionExit={() => {
+                     setIsOnFan(false);
+                     console.log("Exiting intersection: isIntersected false");
+                  }}
+               />
                <CuboidCollider args={[1, 2.25, 1]} position={[-6, 0, -5]} />
                <Fan
                   scale={[5, 5, 5]}

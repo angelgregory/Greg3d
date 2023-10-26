@@ -28,7 +28,8 @@ export default {
             },
          },
          animation: {
-            typing: "typing 1s steps(20), blink .7s infinite",
+            typingLong: "typing 1s steps(20), blink .7s infinite",
+            typingShort: "typing 0.5s steps(5), blink .7s infinite",
          },
       },
    },
