@@ -52,7 +52,7 @@ function App() {
             <color attach="background" args={["#dbecfb"]} />
             <Suspense>
                {/* you can use Physics debug to show guiding lines on objects --greg */}
-               <Physics debug gravity={[0, -9.8, 0]}>
+               <Physics gravity={[0, -9.8, 0]}>
                   <Experience
                      isOnDesk={isOnDesk}
                      setIsOnDesk={setIsOnDesk}
