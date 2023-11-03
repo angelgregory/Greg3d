@@ -29,30 +29,30 @@ const Cork = ({ isClose, setIsClose }) => {
    }, [location]);
    return (
       <div>
-         {isLoading ? (
-            <p>Loading...</p>
-         ) : error ? (
-            <p>{error}</p>
-         ) : (
-            <div className="fixed top-0 left-0 h-screen w-screen">
-               <div className="w-full h-full flex justify-center items-center">
-                  <div className="bg-white portrait:w-full portrait:h-full landscape:h-[75%] portrait:aspect-[9/16] landscape:aspect-video rounded-2xl portrait:overflow-y-scroll no-scrollbar relative p-10">
-                     <div className="h-full rounded-lg overflow-hidden">
-                        <div className="flex justify-center items-center text-center mb-10">
-                           <IoCloseSharp
-                              className=" text-slate-800 absolute top-0 right-0 m-5 cursor-pointer"
-                              size={30}
-                              onClick={() => {
-                                 setIsClose(true);
-                              }}
-                           />
-                           <div>
-                              <h1 className="font-bold text-3xl">
-                                 The Cork Board
-                              </h1>
-                              <p>Send Greg a Note</p>
-                           </div>
+         <div className="fixed top-0 left-0 h-screen w-screen">
+            <div className="w-full h-full flex justify-center items-center">
+               <div className="bg-white portrait:w-full portrait:h-full landscape:h-[75%] portrait:aspect-[9/16] landscape:aspect-video rounded-2xl portrait:overflow-y-scroll no-scrollbar relative p-10">
+                  <div className="h-full rounded-lg overflow-hidden">
+                     <div className="flex justify-center items-center text-center mb-10">
+                        <IoCloseSharp
+                           className=" text-slate-800 absolute top-0 right-0 m-5 cursor-pointer"
+                           size={30}
+                           onClick={() => {
+                              setIsClose(true);
+                           }}
+                        />
+                        <div>
+                           <h1 className="font-bold text-3xl">
+                              The Cork Board
+                           </h1>
+                           <p>Send Greg a Note</p>
                         </div>
+                     </div>
+                     {isLoading ? (
+                        <p>Loading...</p>
+                     ) : error ? (
+                        <p>{error}</p>
+                     ) : (
                         <ul className="flex list-none flex-wrap gap-5 overflow-scroll no-scrollbar h-full rounded-lg m-20 pb-64">
                            <li className="bg-amber-300 flex-[1_0_21%] rounded-lg border-2 border-amber-300 hover:border-amber-500">
                               <Link to={`/AddNote`}>
@@ -84,11 +84,11 @@ const Cork = ({ isClose, setIsClose }) => {
                                  </li>
                               ))}
                         </ul>
-                     </div>
+                     )}{" "}
                   </div>
                </div>
             </div>
-         )}
+         </div>
       </div>
    );
 };
