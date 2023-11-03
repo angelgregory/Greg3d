@@ -12,8 +12,9 @@ const Menu = (open, setIsOpen) => {
          {isVisible && (
             <div className="absolute top-0 flex flex-col gap-5 text-lg justify-center items-center h-screen w-screen bg-black bg-opacity-30 backdrop-blur-sm">
                <h1 className="font-nav text-white text-5xl drop-shadow-[0_1px_1px_rgba(0,0,0,0.25)]">
-                  GREG'S WALKTHROUGH PORTFOLIO
+                  GREG'S INTERACTIVE PORTFOLIO
                </h1>
+               <p className="text-white">try to explore</p>
                <div className="flex flex-col gap-5">
                   <a
                      onClick={handleButtonClick}

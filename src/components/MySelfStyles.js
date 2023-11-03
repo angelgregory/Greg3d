@@ -16,7 +16,7 @@ export const globalStyles = `
     z-index: 10;
   }
 
-  li:hover {
+  .nav li:hover {
     text-decoration: underline;
     cursor: pointer;
   }

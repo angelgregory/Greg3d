@@ -67,7 +67,7 @@ const About = ({ isClose, setIsClose }) => {
                      </div>
                      <div className="landscape:w-[60%] h-full snap-center z-30 p-5 font-nav relative portrait:pt-10 landscape:px-20">
                         <div className="cursor-pointer lg:text-2xl ">
-                           <ul className="flex justify-between">
+                           <ul className="flex justify-between nav">
 
                               <li><input type="radio" name="option" id="1" value="1" className="peer hidden" defaultChecked/><label htmlFor="1" className="block cursor-pointer select-none text-center peer-checked:underline " onClick={()=>liClick(0)}>Who</label></li>
                               <li><input type="radio" name="option" id="2" value="2" className="peer hidden"/><label htmlFor="2" className="block cursor-pointer select-none text-center peer-checked:underline " onClick={()=>liClick(1)}>What</label></li>

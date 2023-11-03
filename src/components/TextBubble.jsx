@@ -28,7 +28,7 @@ const TextBubble = ({ query }) => {
                            : "animate-typingLong overflow-hidden whitespace-nowrap font-nav"
                      }
                   >
-                     {console.log(length)}
+                     {/* {console.log(length)} */}
                      {Dialogue[0][query]}
                   </h1>
                </div>

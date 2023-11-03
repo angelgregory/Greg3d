@@ -47,7 +47,7 @@ const MyWork = ({ isClose, setIsClose }) => {
                            className="w-[10vh] h-[10vh] flex flex-col items-center "
                            onClick={() => {
                               setIsWorkFolder(!isWorkFolder);
-                              console.log(isWorkFolder);
+                              //console.log(isWorkFolder);
                            }}
                         >
                            <ImageHover

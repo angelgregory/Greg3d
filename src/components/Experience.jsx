@@ -33,13 +33,16 @@ export const Experience = ({
    setIsOnBed,
    isOnFan,
    setIsOnFan,
+   isOnCork,
+   setIsOnCork,
 }) => {
    const handleButtonClick = () => {
       // Triggered when the button inside the canvas is clicked
-      console.log("onCanvas");
+      // console.log("onCanvas");
    };
 
    const ref = useRef();
+   const [cork, onCork] = useState(false);
    const [isIntersected, setIsIntersected] = useState(false);
    const [isClicked, setIsClicked] = useState(false);
 
@@ -78,6 +81,14 @@ export const Experience = ({
             ref={ref}
          >
             {/* invi walls */}
+            {/* note wall */}
+
+            <CuboidCollider
+               args={[0.5, 3, 3]}
+               position={[6, 2, 3]}
+               sensor={!isOnCork}
+            />
+
             <CuboidCollider args={[8, 1, 8]} position={[0, 11, 0]} />
             <CuboidCollider args={[1, 5, 8]} position={[8, 5, 0]} />
             <CuboidCollider args={[8, 5, 1]} position={[0, 5, 8]} />
@@ -100,11 +111,11 @@ export const Experience = ({
                   sensor
                   onIntersectionEnter={() => {
                      setIsOnBed(true);
-                     console.log("Entering intersection: isIntersected true");
+                     // console.log("Entering intersection: isIntersected true");
                   }}
                   onIntersectionExit={() => {
                      setIsOnBed(false);
-                     console.log("Exiting intersection: isIntersected false");
+                  //   console.log("Exiting intersection: isIntersected false");
                   }}
                />
                <CuboidCollider args={[1.7, 1.25, 3]} position={[5.5, 0, -4]} />
@@ -113,7 +124,21 @@ export const Experience = ({
                   position={[5.5, 1, -4]}
                   rotation-y={[-(Math.PI / 180) * 90]}
                />
-
+               {/* Board */}
+               <CuboidCollider
+                  args={[1, 2, 2]}
+                  position={[8, 2, 3]}
+                  sensor
+                  onIntersectionEnter={() => {
+                     setIsOnCork(true);
+                     onCork(isOnCork);
+                    // console.log("Entering intersection: isIntersected true");
+                  }}
+                  // onIntersectionExit={() => {
+                  //    setIsOnBed(false);
+                  //    console.log("Exiting intersection: isIntersected false");
+                  // }}
+               />
                <Board
                   scale={[5, 5, 5]}
                   position={[8, 2, 3]}
@@ -126,11 +151,11 @@ export const Experience = ({
                   sensor
                   onIntersectionEnter={() => {
                      setIsOnDesk(true);
-                     console.log("Entering intersection: isIntersected true");
+                   //  console.log("Entering intersection: isIntersected true");
                   }}
                   onIntersectionExit={() => {
                      setIsOnDesk(false);
-                     console.log("Exiting intersection: isIntersected false");
+                   //  console.log("Exiting intersection: isIntersected false");
                   }}
                />
                <CuboidCollider args={[1.25, 2.25, 2]} position={[-6, 0, -1]} />
@@ -157,11 +182,11 @@ export const Experience = ({
                   sensor
                   onIntersectionEnter={() => {
                      setIsOnCabinet(true);
-                     console.log("Entering intersection: isIntersected true");
+                    // console.log("Entering intersection: isIntersected true");
                   }}
                   onIntersectionExit={() => {
                      setIsOnCabinet(false);
-                     console.log("Exiting intersection: isIntersected false");
+                    // console.log("Exiting intersection: isIntersected false");
                   }}
                />
                <CuboidCollider args={[3, 6, 0.5]} position={[-1, 0, -6]} />
@@ -190,14 +215,13 @@ export const Experience = ({
                   sensor
                   onIntersectionEnter={() => {
                      setIsOnWardRobe(true);
-                     console.log("Entering intersection: isIntersected true");
+                    // console.log("Entering intersection: isIntersected true");
                   }}
                   onIntersectionExit={() => {
                      setIsOnWardRobe(false);
-                     console.log("Exiting intersection: isIntersected false");
+                    // console.log("Exiting intersection: isIntersected false");
                   }}
                />
-               {/* board */}
 
                <CuboidCollider args={[1.05, 1, 2]} position={[-6, 3, 4]} />
                <Wardrobe
@@ -212,11 +236,11 @@ export const Experience = ({
                   sensor
                   onIntersectionEnter={() => {
                      setIsOnFan(true);
-                     console.log("Entering intersection: isIntersected true");
+                    // console.log("Entering intersection: isIntersected true");
                   }}
                   onIntersectionExit={() => {
                      setIsOnFan(false);
-                     console.log("Exiting intersection: isIntersected false");
+                    // console.log("Exiting intersection: isIntersected false");
                   }}
                />
                <CuboidCollider args={[1, 2.25, 1]} position={[-6, 0, -5]} />

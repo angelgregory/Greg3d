@@ -12,6 +12,11 @@ import Instructions from "./components/Instructions";
 import { Helmet } from "react-helmet";
 import favicon from "./assets/images/icon.png";
 import TextBubble from "./components/TextBubble";
+import Cork from "./components/Cork";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Note from "./components/Note";
+import AddNote from "./components/AddNote";
+
 export const Controls = {
    forward: "forward",
    back: "back",
@@ -34,6 +39,7 @@ function App() {
 
    const [isOnDesk, setIsOnDesk] = useState(false);
    const [isClose, setIsClose] = useState(false);
+   const [isOnCork, setIsOnCork] = useState(false);
    const [isOnWardrobe, setIsOnWardRobe] = useState(false);
    const [isOnCabinet, setIsOnCabinet] = useState(false);
    const [isOnBed, setIsOnBed] = useState(false);
@@ -51,65 +57,80 @@ function App() {
       setIsOnCabinet(false);
       setIsOnBed(false);
       setIsOnFan(false);
+      setIsOnCork(false);
    }
    const title = "Greg's Portfolio";
    return (
-      <KeyboardControls map={map}>
-         <Helmet>
-            <title>{title}</title>
-            <link rel="icon" type="image/png" href={favicon} sizes="16x16" />
-         </Helmet>
-         <Canvas shadows camera={{ position: [0, 6, 42], fov: 80 }}>
-            <color attach="background" args={["#dbecfb"]} />
-            <Suspense>
-               {/* you can use Physics debug to show guiding lines on objects --greg */}
-               <Physics
-                  //debug
-                  gravity={[0, -9.8, 0]}
-               >
-                  <Experience
-                     isOnDesk={isOnDesk}
-                     setIsOnDesk={setIsOnDesk}
-                     isOnWardrobe={isOnWardrobe}
-                     setIsOnWardRobe={setIsOnWardRobe}
-                     isOnCabinet={isOnCabinet}
-                     setIsOnCabinet={setIsOnCabinet}
-                     isOnBed={isOnBed}
-                     setIsOnBed={setIsOnBed}
-                     isOnFan={isOnFan}
-                     setIsOnFan={setIsOnFan}
-                  />
-               </Physics>
-            </Suspense>
-         </Canvas>
-         <Menu />
-         {isOnDesk ? (
-            <MyWork isClose={isClose} setIsClose={setIsClose} />
-         ) : isOnWardrobe ? (
-            <About isClose={isClose} setIsClose={setIsClose} />
-         ) : (
-            ""
-         )}
-         <div className="xl:hidden">
-            <MenuControls />
-         </div>
-         {isOnCabinet || isOnBed || isOnFan ? (
-            <div>
-               <TextBubble
-                  query={
-                     isOnCabinet
-                        ? "cabinet"
-                        : isOnBed
-                        ? "bed"
-                        : isOnFan
-                        ? "fan"
-                        : ""
-                  }
-               />
+      <Router>
+         <KeyboardControls map={map} disabled={true}>
+            {" "}
+            <Helmet>
+               <title>{title}</title>
+               <link rel="icon" type="image/png" href={favicon} sizes="16x16" />
+            </Helmet>
+            {/* <RouterProvider router={router} /> */}
+            <Canvas shadows camera={{ position: [0, 6, 42], fov: 80 }}>
+               <color attach="background" args={["#dbecfb"]} />
+               <Suspense>
+                  {/* you can use Physics debug to show guiding lines on objects --greg */}
+                  <Physics
+                     // debug
+                     gravity={[0, -9.8, 0]}
+                  >
+                     <Experience
+                        isOnDesk={isOnDesk}
+                        setIsOnDesk={setIsOnDesk}
+                        isOnWardrobe={isOnWardrobe}
+                        setIsOnWardRobe={setIsOnWardRobe}
+                        isOnCabinet={isOnCabinet}
+                        setIsOnCabinet={setIsOnCabinet}
+                        isOnBed={isOnBed}
+                        setIsOnBed={setIsOnBed}
+                        isOnFan={isOnFan}
+                        setIsOnFan={setIsOnFan}
+                        isOnCork={isOnCork}
+                        setIsOnCork={setIsOnCork}
+                     />
+                  </Physics>
+               </Suspense>
+            </Canvas>
+            <Menu />
+            {isOnDesk ? (
+               <MyWork isClose={isClose} setIsClose={setIsClose} />
+            ) : isOnWardrobe ? (
+               <About isClose={isClose} setIsClose={setIsClose} />
+            ) : isOnCork ? (
+               <Cork isClose={isClose} setIsClose={setIsClose} />
+            ) : (
+               ""
+            )}
+            <div className="xl:hidden">
+               <MenuControls />
             </div>
-         ) : null}
-         {/* <Instructions /> */}
-      </KeyboardControls>
+            {isOnCabinet || isOnBed || isOnFan ? (
+               <div>
+                  <TextBubble
+                     query={
+                        isOnCabinet
+                           ? "cabinet"
+                           : isOnBed
+                           ? "bed"
+                           : isOnFan
+                           ? "fan"
+                           : ""
+                     }
+                  />
+               </div>
+            ) : null}
+            {/* <Instructions /> */}
+            {/* <Cork /> */}
+         </KeyboardControls>
+         <Routes>
+            <Route path="/" element={""} />
+            <Route path="/note/:id" element={<Note />} />
+            <Route path="/AddNote" element={<AddNote />} />
+         </Routes>
+      </Router>
    );
 }
 
