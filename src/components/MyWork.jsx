@@ -24,6 +24,7 @@ const MyWork = ({ isClose, setIsClose }) => {
             onPointerLeave={() => {
                imageRef.current.src = image1;
             }}
+            onCli
             src={image1}
             alt=""
             ref={imageRef}

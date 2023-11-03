@@ -20,6 +20,7 @@ import { Boxes } from "./Furnitures/Boxes";
 import IFrame from "./IFrame.jsx";
 
 import MyWork from "./MyWork";
+import { Board } from "./Furnitures/Board.jsx";
 
 export const Experience = ({
    isOnDesk,
@@ -112,6 +113,12 @@ export const Experience = ({
                   position={[5.5, 1, -4]}
                   rotation-y={[-(Math.PI / 180) * 90]}
                />
+
+               <Board
+                  scale={[5, 5, 5]}
+                  position={[8, 2, 3]}
+                  rotation-y={[-(Math.PI / 180) * 90]}
+               />
                {/* Desktop */}
                <CuboidCollider
                   args={[2.05, 0, 2]}
@@ -190,6 +197,8 @@ export const Experience = ({
                      console.log("Exiting intersection: isIntersected false");
                   }}
                />
+               {/* board */}
+
                <CuboidCollider args={[1.05, 1, 2]} position={[-6, 3, 4]} />
                <Wardrobe
                   scale={[5, 3, 5]}
