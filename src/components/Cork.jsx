@@ -62,7 +62,7 @@ const Cork = ({ isClose, setIsClose }) => {
                               </Link>
                            </li>
                            {data
-                              .slice(0)
+                              // .slice(0)
                               // .reverse()
                               .map((item) => (
                                  <li
