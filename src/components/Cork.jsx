@@ -29,7 +29,7 @@ const Cork = ({ isClose, setIsClose }) => {
    }, [location]);
    return (
       <div>
-         <div className="fixed top-0 left-0 h-screen w-screen">
+         <div className="fixed top-0 left-0 h-screen w-screen z-20">
             <div className="w-full h-full flex justify-center items-center">
                <div className="bg-white portrait:w-full portrait:h-full landscape:h-[75%] portrait:aspect-[9/16] landscape:aspect-video rounded-2xl portrait:overflow-y-scroll no-scrollbar relative p-10">
                   <div className="h-full rounded-lg overflow-hidden">
