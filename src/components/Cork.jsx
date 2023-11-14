@@ -53,10 +53,13 @@ const Cork = ({ isClose, setIsClose }) => {
                      ) : error ? (
                         <p>{error}</p>
                      ) : (
-                        <ul className="flex list-none flex-wrap gap-5 overflow-scroll no-scrollbar h-full rounded-lg m-20 pb-64">
-                           <li className="bg-amber-300 flex-[1_0_21%] rounded-lg border-2 border-amber-300 hover:border-amber-500">
+                       <ul className="flex list-none flex-wrap gap-5 overflow-scroll no-scrollbar h-full rounded-lg landscape:m-20 landscape:pb-64">
+                           <li
+                              key={""}
+                              className="bg-none landscape:flex-[1_0_21%] rounded-lg border-2 border-amber-300 hover:border-amber-300 hover:bg-amber-200 w-full h-28"
+                           >
                               <Link to={`/AddNote`}>
-                                 <div className="flex justify-center items-center w-full h-full font-light text-5xl">
+                                 <div className=" text-amber-300 flex justify-center items-center w-full h-full font-light text-5xl">
                                     +
                                  </div>
                               </Link>
