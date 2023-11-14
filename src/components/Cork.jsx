@@ -73,12 +73,12 @@ const Cork = ({ isClose, setIsClose }) => {
                                     className="bg-amber-300 landscape:flex-[1_0_21%] rounded-lg border-2 border-amber-300 hover:border-amber-500 portrait:w-full"
                                  >
                                     <Link to={`/note/${item._id}`}>
-                                       <div className="w-full h-full">
+                                     <div className="w-full h-full break-all text-ellipsis overflow-hidden">
                                           <div className="p-10">
                                              <h3 className="font-nav mt-0 mb-10">
                                                 {item.title}
                                              </h3>
-                                             <p className="mt-0 mb-10 break-all text-ellipsis overflow-hidden max-h-28">
+                                             <p className="mt-0 mb-10 max-h-28">
                                                 {item.description}
                                              </p>
                                           </div>
