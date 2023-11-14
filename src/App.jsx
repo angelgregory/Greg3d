@@ -44,6 +44,7 @@ function App() {
    const [isOnCabinet, setIsOnCabinet] = useState(false);
    const [isOnBed, setIsOnBed] = useState(false);
    const [isOnFan, setIsOnFan] = useState(false);
+   const [isOnMenu, setIsOnMenu] = useState();
    // useEffect(() => {
    //    if (isOnCabinet) {
    //       place = "cabinet";
@@ -104,9 +105,7 @@ function App() {
             ) : (
                ""
             )}
-            <div className="xl:hidden">
-               <MenuControls />
-            </div>
+           <div className="xl:hidden">{isOnMenu ? <MenuControls /> : ""}</div>
             {isOnCabinet || isOnBed || isOnFan ? (
                <div>
                   <TextBubble
