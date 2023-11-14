@@ -95,7 +95,7 @@ function App() {
                   </Physics>
                </Suspense>
             </Canvas>
-            <Menu />
+          <Menu setIsOnMenu={setIsOnMenu} />
             {isOnDesk ? (
                <MyWork isClose={isClose} setIsClose={setIsClose} />
             ) : isOnWardrobe ? (
