@@ -67,7 +67,7 @@ const Cork = ({ isClose, setIsClose }) => {
                               .map((item) => (
                                  <li
                                     key={item._id}
-                                    className="bg-amber-300 flex-[1_0_21%] rounded-lg border-2 border-amber-300 hover:border-amber-500"
+                                    className="bg-amber-300 landscape:flex-[1_0_21%] rounded-lg border-2 border-amber-300 hover:border-amber-500 portrait:w-full"
                                  >
                                     <Link to={`/note/${item._id}`}>
                                        <div className="w-full h-full">
