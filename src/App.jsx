@@ -70,7 +70,7 @@ function App() {
 				{" "}
 				<Helmet>
 					<title>{title}</title>
-					<link rel="icon" type="image/svg" href={favicon} sizes="16x16" />
+					<link rel="icon" type="image/png" href={favicon} sizes="16x16" />
 				</Helmet>
 				{/* <RouterProvider router={router} /> */}
 				<Canvas shadows camera={{ position: [0, 6, 42], fov: 80 }}>
