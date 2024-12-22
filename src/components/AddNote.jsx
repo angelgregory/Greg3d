@@ -42,7 +42,7 @@ const AddNote = () => {
                      onSubmit={addNote}
                      className="flex justify-center items-center h-full"
                   >
-                     <div className="bg-amber-300 rounded-lg p-20 w-[50%] h-full relative">
+                     <div className="bg-amber-300 rounded-lg landscape:p-20 portrait:p-10 landscape:w-[50%] portrait:w-full landscape:h-full portrait:h-[80%] relative">
                         <Link to="/" className="absolute top-0 right-0 m-5">
                            <IoCloseSharp
                               className=" text-slate-800"
@@ -87,7 +87,7 @@ const AddNote = () => {
                               value={title}
                               onChange={(e) => setTitle(e.target.value)}
                               placeholder="Title"
-                              className="placeholder-stone-600 font-nav bg-transparent w-full mb-10 text-xl break-words"
+                              className="placeholder-stone-600 font-nav bg-transparent w-full text-xl focus:outline-none focus:border-none h-20"
                               // disabled={!sameUser}
                            />
                         </div>
@@ -99,7 +99,7 @@ const AddNote = () => {
                            placeholder="Description"
                            row="4"
                            cols="50"
-                           className="description bg-transparent w-full h-[80%] placeholder-stone-600"
+                           className="description bg-transparent w-full h-[80%] placeholder-stone-600 focus:outline-none focus:border-none"
                            //  disabled={!sameUser}
                         ></textarea>
                      </div>

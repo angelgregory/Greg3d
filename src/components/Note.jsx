@@ -15,7 +15,7 @@ function Note() {
    const [submitted, setSubmitted] = useState(false);
    const [isLoading, setIsLoading] = useState(true);
    const location = useLocation();
-   const navigate = useNavigate();  
+   const navigate = useNavigate();
 
    useEffect(() => {
       axios
@@ -73,7 +73,7 @@ function Note() {
                      onSubmit={note}
                      className="flex justify-center items-center h-full"
                   >
-                     <div className="bg-amber-300 rounded-lg p-20 w-[50%] h-full relative">
+                     <div className="bg-amber-300 rounded-lg landscape:p-20 portrait:p-10 landscape:w-[50%] portrait:w-full landscape:h-full portrait:h-[80%] relative">
                         <Link to="/" className="absolute top-0 right-0 m-5">
                            <IoCloseSharp
                               className=" text-slate-800"
@@ -122,7 +122,7 @@ function Note() {
                               value={title}
                               onChange={(e) => setTitle(e.target.value)}
                               placeholder="Title"
-                              className="placeholder-stone-600 font-nav bg-transparent w-full mb-10 text-xl break-words"
+                              className="placeholder-stone-600 font-nav bg-transparent w-full mb-10 text-xl break-words  focus:outline-none focus:border-none "
                               disabled={!sameUser}
                            />
                         </div>

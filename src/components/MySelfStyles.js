@@ -37,7 +37,20 @@ export const globalStyles = `
    font-weight: bold;
   }
 .jump{
-   width:10vh;
+   width:auto; 
+   padding:1rem;
+   height:7vh;
+   margin:0.5em;
+   user-select: none; 
+   color: #fff;
+   background: #ccc;
+   border-radius: 6px;
+   box-shadow: -1px 1px 0 #999, -2px 2px 0 #999, -3px 3px 0 #999, -4px 4px 0 #999;
+   font-weight: bold;
+  }
+.jump2{
+   width:calc(7vh*3.5);
+   padding:1rem;
    height:7vh;
    margin:0.5em;
    user-select: none; 
@@ -66,87 +79,87 @@ export const globalStyles = `
 `;
 
 export const flex = {
-   display: "flex",
+	display: "flex",
 };
 
 export const itemsCenter = {
-   alignItems: "center",
+	alignItems: "center",
 };
 
 export const justifyCenter = {
-   justifyContent: "center",
+	justifyContent: "center",
 };
 export const h = {
-   screen: { height: "100vh" },
-   full: { height: "100%" },
-   fit: {
-      height: "fit-content",
-   },
+	screen: { height: "100vh" },
+	full: { height: "100%" },
+	fit: {
+		height: "fit-content",
+	},
 };
 export const relative = {
-   position: "relative",
+	position: "relative",
 };
 export const absolute = {
-   position: "absolute",
+	position: "absolute",
 };
 export const rounded = {
-   borderRadius: "3.125rem",
+	borderRadius: "3.125rem",
 };
 export const aspectVideo = {
-   aspectRatio: "16/9",
+	aspectRatio: "16/9",
 };
 export const bg = {
-   white: { backgroundColor: "rgb(255 255 255)" },
-   black: { backgroundColor: "rgb(0 0 0)" },
+	white: { backgroundColor: "rgb(255 255 255)" },
+	black: { backgroundColor: "rgb(0 0 0)" },
 };
 export const overflow = {
-   hidden: {
-      overflow: "hidden",
-   },
+	hidden: {
+		overflow: "hidden",
+	},
 };
 export const grid = {
-   gc1: {
-      display: "grid",
+	gc1: {
+		display: "grid",
 
-      gridTemplateColumns: "repeat(1, minmax(0, 1fr)",
-   },
-   gc2: {
-      display: "grid",
+		gridTemplateColumns: "repeat(1, minmax(0, 1fr)",
+	},
+	gc2: {
+		display: "grid",
 
-      gridTemplateColumns: "repeat(2, minmax(0, 1fr)",
-   },
-   gc3: {
-      display: "grid",
+		gridTemplateColumns: "repeat(2, minmax(0, 1fr)",
+	},
+	gc3: {
+		display: "grid",
 
-      gridTemplateColumns: "repeat(3, minmax(0, 1fr)",
-   },
+		gridTemplateColumns: "repeat(3, minmax(0, 1fr)",
+	},
 };
 export const col = {
-   span1: {
-      gridColumn: "span 1 / span 1",
-   },
-   span2: {
-      gridColumn: "span 2 / span 2",
-   },
-   span3: {
-      gridColumn: "span 3 / span 3",
-   },
+	span1: {
+		gridColumn: "span 1 / span 1",
+	},
+	span2: {
+		gridColumn: "span 2 / span 2",
+	},
+	span3: {
+		gridColumn: "span 3 / span 3",
+	},
 };
 export const font = {
-   bold: {
-      fontFamily: "IBM Plex Mono, monospace",
-      fontWeight: 700, // Specific font weight (e.g., 700 for bold)
-   },
-   light: {
-      fontFamily: "Inter",
-      fontWeight: "300",
-   },
-   nav: {
-      fontFamily: "IBM Plex Mono, monospace",
-   },
+	bold: {
+		fontFamily: "IBM Plex Mono, monospace",
+		fontWeight: 700, // Specific font weight (e.g., 700 for bold)
+	},
+	light: {
+		fontFamily: "Inter",
+		fontWeight: "300",
+	},
+	nav: {
+		fontFamily: "IBM Plex Mono, monospace",
+	},
 };
 export const lgHover = {
-   fontFamily: "inherit", // Use the default font family on hover
-   fontSize: "300vh", // Change font size to 35px on hover
-   cursor: "pointer", // Change cursor to pointer on hover
+	fontFamily: "inherit", // Use the default font family on hover
+	fontSize: "300vh", // Change font size to 35px on hover
+	cursor: "pointer", // Change cursor to pointer on hover
 };
