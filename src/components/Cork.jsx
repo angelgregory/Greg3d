@@ -56,6 +56,7 @@ const Cork = ({ isClose, setIsClose }) => {
    return (
       <div>
          <div className="fixed top-0 left-0 h-screen w-screen z-20">
+         <div className="fixed top-0 left-0 h-screen w-screen z-20">
             <div className="w-full h-full flex justify-center items-center">
                <div className="bg-white portrait:w-full portrait:h-full landscape:h-[75%] portrait:aspect-[9/16] landscape:aspect-video rounded-2xl portrait:overflow-y-scroll no-scrollbar relative p-10">
                   <div className="h-full rounded-lg overflow-hidden">
@@ -122,6 +123,7 @@ const Cork = ({ isClose, setIsClose }) => {
                            <li className="bg-none landscape:flex-[1_0_21%] rounded-lg border-2 border-amber-300 hover:border-amber-300 hover:bg-amber-200 w-full h-28">
                               <Link to={`/AddNote`}>
                                  <div className=" text-amber-300 flex justify-center items-center w-full h-full font-light text-5xl">
+                                 <div className=" text-amber-300 flex justify-center items-center w-full h-full font-light text-5xl">
                                     +
                                  </div>
                               </Link>
@@ -133,6 +135,7 @@ const Cork = ({ isClose, setIsClose }) => {
                                  <li
                                     key={item._id}
                                     className="bg-amber-300 landscape:flex-[1_0_21%] rounded-lg border-2 border-amber-300 hover:border-amber-500 portrait:w-full"
+                                    className="bg-amber-300 landscape:flex-[1_0_21%] rounded-lg border-2 border-amber-300 hover:border-amber-500 portrait:w-full"
                                  >
                                     <Link to={`/note/${item._id}`}>
                                        <div className="w-full h-full break-all text-ellipsis overflow-hidden">
@@ -140,6 +143,7 @@ const Cork = ({ isClose, setIsClose }) => {
                                              <h3 className="font-nav mt-0 mb-10">
                                                 {item.title}
                                              </h3>
+                                             <p className="mt-0 mb-10 max-h-28">
                                              <p className="mt-0 mb-10 max-h-28">
                                                 {item.description}
                                              </p>
