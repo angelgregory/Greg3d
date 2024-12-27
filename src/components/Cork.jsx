@@ -1,8 +1,7 @@
-import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import axios from "axios";
-import React, { useEffect, useState } from "react";
+import { useQuery } from "@tanstack/react-query";
+import React from "react";
 import { IoCloseSharp } from "react-icons/io5";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { getAllNotes } from "./api/notes";
 // import useSWR from "swr";
 
