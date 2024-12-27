@@ -1,20 +1,13 @@
-import { useQuery } from "@tanstack/react-query";
 import React, { useEffect, useState } from "react";
 import { IoCloseSharp } from "react-icons/io5";
 import { Link, useLocation } from "react-router-dom";
-import { getAllNotes } from "./api/notes";
-import ContactUs from "./ContactUs";
-import { useLocalStorage } from "../hooks/useStorage";
 // import useSWR from "swr";
 
 const Cork = ({ isClose, setIsClose }) => {
 	const location = useLocation();
 	const [value, setValue] = useState(localStorage.getItem("email") ? JSON.parse(localStorage.getItem("email")) : []);
-
-	console.log("👻 ~ value:", value);
-
 	useEffect(() => {
-		setValue((prev) => localStorage.getItem("email") ? JSON.parse(localStorage.getItem("email")) : []);
+		setValue((prev) => (localStorage.getItem("email") ? JSON.parse(localStorage.getItem("email")) : []));
 	}, [location.pathname]);
 
 	// const [value, setValue, removeValue] = useLocalStorage("email", "");
