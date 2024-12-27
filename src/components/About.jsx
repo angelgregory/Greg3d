@@ -6,6 +6,7 @@ import { IoReturnDownBackOutline } from "react-icons/io5";
 import Questions from "./Questions";
 
 const About = ({ isClose, setIsClose }) => {
+   
    const [isWork, setIsWork] = useState(false);
    const [isWorkFolder, setIsWorkFolder] = useState(false);
    const [showContent, setShowContent] = useState(0);

@@ -3,14 +3,15 @@ import React from "react";
 import { IoCloseSharp } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import { getAllNotes } from "./api/notes";
+import ContactUs from "./ContactUs";
 // import useSWR from "swr";
 
 const Cork = ({ isClose, setIsClose }) => {
-	const { data: notes } = useQuery({
-		queryFn: () => getAllNotes(),
-		queryKey: ["note"],
-		staleTime: Infinity,
-	});
+	// const { data: notes } = useQuery({
+	// 	queryFn: () => getAllNotes(),
+	// 	queryKey: ["note"],
+	// 	staleTime: Infinity,
+	// });
 
 	// console.log(notes);
 
@@ -67,10 +68,12 @@ const Cork = ({ isClose, setIsClose }) => {
 								/>
 								<div>
 									<h1 className="font-bold text-3xl">The Cork Board</h1>
-									<p>Send Greg a Note</p>
+									<p>Send Greg an Email</p>
 								</div>
 							</div>
 
+							<ContactUs onClose={setIsClose} />
+							{/* 
 							{notes && notes.length > 0 ? (
 								<ul className="flex list-none flex-wrap gap-5 overflow-scroll no-scrollbar h-full rounded-lg landscape:m-20 landscape:pb-64">
 									<li
@@ -103,7 +106,7 @@ const Cork = ({ isClose, setIsClose }) => {
 											</li>
 										))}
 								</ul>
-							) : null}
+							) : null} */}
 							{/* {
                      isLoading ? (
                         <p>Loading...</p>

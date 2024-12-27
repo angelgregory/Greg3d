@@ -7,12 +7,14 @@ import mailOpen from "../assets/images/mail-open.png";
 import bg from "../assets/images/desktop-bg.png";
 import off from "../assets/images/turn-off.png";
 import WorkFolder from "./WorkFolder";
+import ProjectsFolder from "./ProjectsFolder";
 import IFrame from "./IFrame";
 import { useRef } from "react";
 
 const MyWork = ({ isClose, setIsClose }) => {
 	const [isWork, setIsWork] = useState(false);
 	const [isWorkFolder, setIsWorkFolder] = useState(false);
+	const [isProjectsFolder, setIsProjectsFolder] = useState(false);
 	const ImageHover = ({ image1, image2, className }) => {
 		const imageRef = useRef(null);
 
@@ -43,6 +45,7 @@ const MyWork = ({ isClose, setIsClose }) => {
 									className="w-[10vh] h-[10vh] flex flex-col items-center "
 									onClick={() => {
 										setIsWorkFolder(!isWorkFolder);
+										setIsProjectsFolder(false);
 										//console.log(isWorkFolder);
 									}}
 								>
@@ -57,7 +60,8 @@ const MyWork = ({ isClose, setIsClose }) => {
 								<div
 									className="w-[10vh] h-[10vh] flex flex-col items-center "
 									onClick={() => {
-										setIsWorkFolder(!isWorkFolder);
+										setIsProjectsFolder(!isProjectsFolder);
+										setIsWorkFolder(false);
 										//console.log(isWorkFolder);
 									}}
 								>
@@ -85,7 +89,7 @@ const MyWork = ({ isClose, setIsClose }) => {
 										: ""
 								} rounded-md`}
 							>
-								{isWorkFolder ? (
+								{isWorkFolder && (
 									<IFrame>
 										<WorkFolder
 											closeFn={() => {
@@ -93,8 +97,15 @@ const MyWork = ({ isClose, setIsClose }) => {
 											}}
 										/>
 									</IFrame>
-								) : (
-									""
+								)}
+								{isProjectsFolder && (
+									<IFrame>
+										<ProjectsFolder
+											closeFn={() => {
+												setIsWorkFolder(false);
+											}}
+										/>
+									</IFrame>
 								)}
 							</div>
 						</div>

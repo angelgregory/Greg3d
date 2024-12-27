@@ -126,7 +126,7 @@ function App() {
 			</KeyboardControls>
 			<Routes>
 				<Route path="/" element={""} />
-				{/* <Route path="/note/:id" element={<Note />} /> */}
+				<Route path="/note/:id" element={<Note />} />
 				<Route path="/AddNote" element={<AddNote />} />
 			</Routes>
 		</Router>
