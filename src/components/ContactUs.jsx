@@ -53,7 +53,7 @@ const ContactUs = ({ onClose }) => {
 	};
 
 	return (
-		<div className="w-full h-full mx-auto  rounded-xl backdrop-blur-sm">
+		<div className="w-full mx-auto bg-white/50 rounded-xl backdrop-blur-sm">
 			<form ref={form} onSubmit={sendEmail} className="space-y-6 p-6">
 				<div className="relative">
 					<input
@@ -64,7 +64,7 @@ const ContactUs = ({ onClose }) => {
 							errors.name ? "border-red-400" : "border-amber-300"
 						} rounded-lg focus:outline-none focus:border-amber-500 peer`}
 					/>
-					<label className="absolute left-4 top-3 text-amber-700 text-sm transition-all duration-300 -translate-y-8 peer-placeholder-shown:translate-y-0 peer-focus:-translate-y-8 peer-focus:text-amber-500">
+					<label className="absolute left-4 top-3 text-amber-700 text-xs transition-all duration-300 -translate-y-8 peer-placeholder-shown:translate-y-0 peer-focus:-translate-y-8 peer-focus:text-amber-500">
 						Your awesome name
 					</label>
 					{errors.name && <p className="mt-1 text-red-500 text-xs">{errors.name}</p>}
@@ -79,7 +79,7 @@ const ContactUs = ({ onClose }) => {
 							errors.email ? "border-red-400" : "border-amber-300"
 						} rounded-lg focus:outline-none focus:border-amber-500 peer`}
 					/>
-					<label className="absolute left-4 top-3 text-amber-700 text-sm transition-all duration-300 -translate-y-8 peer-placeholder-shown:translate-y-0 peer-focus:-translate-y-8 peer-focus:text-amber-500">
+					<label className="absolute left-4 top-3 text-amber-700 text-xs transition-all duration-300 -translate-y-8 peer-placeholder-shown:translate-y-0 peer-focus:-translate-y-8 peer-focus:text-amber-500">
 						Your email address (for replying!)
 					</label>
 					{errors.email && <p className="mt-1 text-red-500 text-xs">{errors.email}</p>}
@@ -93,7 +93,7 @@ const ContactUs = ({ onClose }) => {
 							errors.message ? "border-red-400" : "border-amber-300"
 						} rounded-lg h-32 resize-none focus:outline-none focus:border-amber-500 peer`}
 					/>
-					<label className="absolute left-4 top-3 text-amber-700 text-sm transition-all duration-300 -translate-y-8 peer-placeholder-shown:translate-y-0 peer-focus:-translate-y-8 peer-focus:text-amber-500">
+					<label className="absolute left-4 top-3 text-amber-700 text-xs transition-all duration-300 -translate-y-8 peer-placeholder-shown:translate-y-0 peer-focus:-translate-y-8 peer-focus:text-amber-500">
 						Tell me something fun!
 					</label>
 					{errors.message && <p className="mt-1 text-red-500 text-xs">{errors.message}</p>}

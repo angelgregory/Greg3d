@@ -68,7 +68,7 @@ const Cork = ({ isClose, setIsClose }) => {
 								/>
 								<div>
 									<h1 className="font-bold text-3xl">The Cork Board</h1>
-									<p>Send Greg an Email</p>
+									<p>Send Greg a memo when he comes back!</p>
 								</div>
 							</div>
 
