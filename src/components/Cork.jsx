@@ -1,19 +1,23 @@
 import { useQuery } from "@tanstack/react-query";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { IoCloseSharp } from "react-icons/io5";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { getAllNotes } from "./api/notes";
 import ContactUs from "./ContactUs";
 import { useLocalStorage } from "../hooks/useStorage";
 // import useSWR from "swr";
 
 const Cork = ({ isClose, setIsClose }) => {
-	const [value, setValue, removeValue] = useLocalStorage("email", "");
+	const location = useLocation();
+	const [value, setValue] = useState(localStorage.getItem("email") ? JSON.parse(localStorage.getItem("email")) : []);
 
-	console.log(
-		"👻 ~ value:",
-		value?.map((item) => JSON.parse(item))
-	);
+	console.log("👻 ~ value:", value);
+
+	useEffect(() => {
+		setValue((prev) => localStorage.getItem("email") ? JSON.parse(localStorage.getItem("email")) : []);
+	}, [location.pathname]);
+
+	// const [value, setValue, removeValue] = useLocalStorage("email", "");
 
 	// const { data: notes } = useQuery({
 	// 	queryFn: () => getAllNotes(),
@@ -89,24 +93,26 @@ const Cork = ({ isClose, setIsClose }) => {
 								</li>
 
 								{value
-									?.map((item) => JSON.parse(item))
-									.slice(0)
-									.reverse()
-									.map((item) => (
-										<li
-											key={item._id}
-											className="bg-amber-300 landscape:flex-[1_0_21%] rounded-lg border-2 border-amber-300 hover:border-amber-500 portrait:w-full"
-										>
-											{/* <Link to={`/note/${item._id}`}> */}
-											<div className="w-full h-full break-all text-ellipsis overflow-hidden">
-												<div className="p-10">
-													<h3 className="font-nav mt-0 mb-10">{item.message}</h3>
-													{/* <p className="mt-0 mb-10 max-h-28">{item.description}</p> */}
-												</div>
-											</div>
-											{/* </Link> */}
-										</li>
-									))}
+									? value
+											?.map((item) => JSON.parse(item))
+											.slice(0)
+											.reverse()
+											.map((item) => (
+												<li
+													key={item._id}
+													className="bg-amber-300 landscape:flex-[1_0_21%] rounded-lg border-2 border-amber-300 hover:border-amber-500 portrait:w-full"
+												>
+													{/* <Link to={`/note/${item._id}`}> */}
+													<div className="w-full h-full break-all text-ellipsis overflow-hidden">
+														<div className="p-10">
+															<h3 className="font-nav mt-0 mb-10">{item.message}</h3>
+															{/* <p className="mt-0 mb-10 max-h-28">{item.description}</p> */}
+														</div>
+													</div>
+													{/* </Link> */}
+												</li>
+											))
+									: ""}
 							</ul>
 							{/* <ContactUs onClose={setIsClose} /> */}
 							{/* 
