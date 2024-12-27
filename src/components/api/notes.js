@@ -1,4 +1,4 @@
-import { apiClient } from "./ApiClient";
+import apiClient from "./apiClient";
 
 export const getAllNotes = async (params) => {
 	const response = await apiClient.get("/api/notes", { params });
