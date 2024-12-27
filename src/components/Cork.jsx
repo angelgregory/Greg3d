@@ -1,12 +1,20 @@
 import { useQuery } from "@tanstack/react-query";
-import React from "react";
+import React, { useEffect } from "react";
 import { IoCloseSharp } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import { getAllNotes } from "./api/notes";
 import ContactUs from "./ContactUs";
+import { useLocalStorage } from "../hooks/useStorage";
 // import useSWR from "swr";
 
 const Cork = ({ isClose, setIsClose }) => {
+	const [value, setValue, removeValue] = useLocalStorage("email", "");
+
+	console.log(
+		"👻 ~ value:",
+		value?.map((item) => JSON.parse(item))
+	);
+
 	// const { data: notes } = useQuery({
 	// 	queryFn: () => getAllNotes(),
 	// 	queryKey: ["note"],
@@ -71,8 +79,36 @@ const Cork = ({ isClose, setIsClose }) => {
 									<p>Drop Greg a note to see when he’s back!</p>
 								</div>
 							</div>
+							<ul className="flex list-none flex-wrap gap-5 overflow-scroll no-scrollbar h-full rounded-lg landscape:m-20 landscape:pb-64">
+								<li className="bg-none landscape:flex-[1_0_21%] rounded-lg border-2 border-amber-300 hover:border-amber-300 hover:bg-amber-200 w-full h-28">
+									<Link to={`/AddNote`}>
+										<div className=" text-amber-300 flex justify-center items-center w-full h-full font-light text-5xl">
+											+
+										</div>
+									</Link>
+								</li>
 
-							<ContactUs onClose={setIsClose} />
+								{value
+									?.map((item) => JSON.parse(item))
+									.slice(0)
+									.reverse()
+									.map((item) => (
+										<li
+											key={item._id}
+											className="bg-amber-300 landscape:flex-[1_0_21%] rounded-lg border-2 border-amber-300 hover:border-amber-500 portrait:w-full"
+										>
+											{/* <Link to={`/note/${item._id}`}> */}
+											<div className="w-full h-full break-all text-ellipsis overflow-hidden">
+												<div className="p-10">
+													<h3 className="font-nav mt-0 mb-10">{item.message}</h3>
+													{/* <p className="mt-0 mb-10 max-h-28">{item.description}</p> */}
+												</div>
+											</div>
+											{/* </Link> */}
+										</li>
+									))}
+							</ul>
+							{/* <ContactUs onClose={setIsClose} /> */}
 							{/* 
 							{notes && notes.length > 0 ? (
 								<ul className="flex list-none flex-wrap gap-5 overflow-scroll no-scrollbar h-full rounded-lg landscape:m-20 landscape:pb-64">

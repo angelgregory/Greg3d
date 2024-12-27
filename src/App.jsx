@@ -16,6 +16,7 @@ import MyWork from "./components/MyWork";
 import Note from "./components/Note";
 import TextBubble from "./components/TextBubble";
 import "./index.css";
+import AddNote2 from "./components/AddNote2";
 
 export const Controls = {
 	forward: "forward",
@@ -127,7 +128,7 @@ function App() {
 			<Routes>
 				<Route path="/" element={""} />
 				<Route path="/note/:id" element={<Note />} />
-				<Route path="/AddNote" element={<AddNote />} />
+				<Route path="/AddNote" element={<AddNote2 />} />
 			</Routes>
 		</Router>
 	);

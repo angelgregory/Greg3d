@@ -1,8 +1,11 @@
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+import { useLocalStorage } from "../hooks/useStorage";
 
 const ContactUs = ({ onClose }) => {
 	const form = useRef();
+
+	const [value, setValue, removeValue] = useLocalStorage("email", "");
 	const [loading, setLoading] = useState(false);
 	const [status, setStatus] = useState(null);
 	const [errors, setErrors] = useState({});
@@ -38,12 +41,19 @@ const ContactUs = ({ onClose }) => {
 		setStatus(null);
 
 		try {
-			await emailjs.sendForm("service_4768qp6", "template_8mzqc8g", form.current, {
+			const res = await emailjs.sendForm("service_4768qp6", "template_8mzqc8g", form.current, {
 				publicKey: "pTLonL2DycDNY8_M1",
 			});
+			console.log("res", res);
 			setStatus("success");
+
+			// Extract and store form values
+			const formData = new FormData(form.current);
+			const formValues = Object.fromEntries(formData.entries());
+			setValue((prev) => [...prev, JSON.stringify(formValues)]);
+
 			form.current.reset();
-			onClose();
+			setErrors({}); // Reset errors
 		} catch (error) {
 			setStatus("error");
 			console.error(error);
