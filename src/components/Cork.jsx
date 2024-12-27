@@ -77,7 +77,7 @@ const Cork = ({ isClose, setIsClose }) => {
 								</div>
 							</div>
 							<ul className="flex list-none flex-wrap gap-5 overflow-scroll no-scrollbar h-full rounded-lg landscape:m-20 landscape:pb-64">
-								<li className="bg-none landscape:flex-[1_0_21%] rounded-lg border-2 border-amber-300 hover:border-amber-300 hover:bg-amber-200 w-full h-28">
+								<li className="bg-none landscape:flex-[1_0_21%] rounded-lg border-2 border-amber-300 hover:border-amber-300 hover:bg-amber-200 w-full h-60">
 									<Link to={`/AddNote`}>
 										<div className=" text-amber-300 flex justify-center items-center w-full h-full font-light text-5xl">
 											+
@@ -93,10 +93,10 @@ const Cork = ({ isClose, setIsClose }) => {
 											.map((item) => (
 												<li
 													key={item._id}
-													className="bg-amber-300 landscape:flex-[1_0_21%] rounded-lg border-2 border-amber-300 hover:border-amber-500 portrait:w-full"
+													className="max-h-60 bg-amber-300 landscape:flex-[1_0_21%] rounded-lg border-2 border-amber-300 hover:border-amber-500 portrait:w-full"
 												>
 													{/* <Link to={`/note/${item._id}`}> */}
-													<div className="w-full h-full break-all text-ellipsis overflow-hidden">
+													<div className="w-full  h-full break-all text-ellipsis overflow-auto">
 														<div className="p-10">
 															<h3 className="font-nav mt-0 mb-10">{item.message}</h3>
 															{/* <p className="mt-0 mb-10 max-h-28">{item.description}</p> */}
