@@ -4,66 +4,71 @@
 @tailwind components;
 @tailwind utilities;
 @layer utilities {
-   @variants responsive {
-      /* Hide scrollbar for Chrome, Safari and Opera */
-      .no-scrollbar::-webkit-scrollbar {
-         display: none;
-      }
+	@variants responsive {
+		/* Hide scrollbar for Chrome, Safari and Opera */
+		.no-scrollbar::-webkit-scrollbar {
+			display: none;
+		}
 
-      /* Hide scrollbar for IE, Edge and Firefox */
-      .no-scrollbar {
-         -ms-overflow-style: none; /* IE and Edge */
-         scrollbar-width: none; /* Firefox */
-      }
-   }
+		/* Hide scrollbar for IE, Edge and Firefox */
+		.no-scrollbar {
+			-ms-overflow-style: none; /* IE and Edge */
+			scrollbar-width: none; /* Firefox */
+		}
+	}
 }
 #root {
-   width: 100vw;
-   height: 100vh;
+	width: 100vw;
+	height: 100vh;
 }
 
 body {
-   margin: 0;
+	margin: 0;
+	overflow: hidden;
 }
-
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
 .exempt-overflow {
-   overflow: visible;
+	overflow: visible;
 }
 
 .menu h1 {
-   font-family: sans-serif;
-   color: white;
+	font-family: sans-serif;
+	color: white;
 }
 .menu {
-   position: fixed;
-   display: flex;
-   flex-direction: column;
-   gap: 16px;
-   justify-content: center;
-   align-items: center;
-   width: 100vw;
-   height: 100vh;
-   left: 0;
-   top: 0;
-   background: rgba(0, 0, 0, 0.3);
-   backdrop-filter: blur(4px);
+	position: fixed;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+	height: 100vh;
+	left: 0;
+	top: 0;
+	background: rgba(0, 0, 0, 0.3);
+	backdrop-filter: blur(4px);
 }
 .menu .button {
-   background: rgba(255, 255, 255, 0.6);
-   padding: 16px 32px;
-   border: none;
-   transition: background-color 0.4s;
-   font-size: 1.5rem;
+	background: rgba(255, 255, 255, 0.6);
+	padding: 16px 32px;
+	border: none;
+	transition: background-color 0.4s;
+	font-size: 1.5rem;
 }
 .menu button:hover {
-   background: white;
-   cursor: pointer;
+	background: white;
+	cursor: pointer;
 }
 
 .ag {
-   -webkit-filter: drop-shadow(2px 2px 0 white) drop-shadow(-2px 2px 0 white)
-      drop-shadow(2px -2px 0 white) drop-shadow(-2px -2px 0 white);
+	-webkit-filter: drop-shadow(2px 2px 0 white) drop-shadow(-2px 2px 0 white) drop-shadow(2px -2px 0 white)
+		drop-shadow(-2px -2px 0 white);
 
-   filter: drop-shadow(2px 2px 0 white) drop-shadow(-2px 2px 0 white)
-      drop-shadow(2px -2px 0 white) drop-shadow(-2px -2px 0 white);
+	filter: drop-shadow(2px 2px 0 white) drop-shadow(-2px 2px 0 white) drop-shadow(2px -2px 0 white)
+		drop-shadow(-2px -2px 0 white);
 }

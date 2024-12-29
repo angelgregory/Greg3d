@@ -3,6 +3,7 @@ import React, { useRef, useState } from "react";
 import { IoCloseSharp } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import { useLocalStorage } from "../hooks/useStorage";
+import moment from "moment";
 const AddNote2 = () => {
 	const form = useRef();
 
@@ -42,19 +43,34 @@ const AddNote2 = () => {
 		setStatus(null);
 
 		try {
-			const res = await emailjs.sendForm("service_4768qp6", "template_8mzqc8g", form.current, {
-				publicKey: "pTLonL2DycDNY8_M1",
-			});
+			// Append timestamp to the form as a hidden field
+			const timestampInput = document.createElement("input");
+			timestampInput.type = "hidden";
+			timestampInput.name = "timestamp";
+			timestampInput.value = moment().format("MMMM DD, YYYY hh:mm A"); // Example: "December 30, 2024 12:30 PM"
+			form.current.appendChild(timestampInput);
+
+			// Send the form using emailjs
+			const res = await emailjs.sendForm(
+				"service_4768qp6",
+				"template_8mzqc8g",
+				form.current, // Pass the form element
+				"pTLonL2DycDNY8_M1" // Public key
+			);
+
 			console.log("res", res);
+
+			// Update status
 			setStatus("success");
 
-			// Extract and store form values
+			// Save form data in localStorage
 			const formData = new FormData(form.current);
 			const formValues = Object.fromEntries(formData.entries());
 			setValue((prev) => [...prev, JSON.stringify(formValues)]);
 
+			// Reset form and errors
 			form.current.reset();
-			setErrors({}); // Reset errors
+			setErrors({});
 		} catch (error) {
 			setStatus("error");
 			console.error(error);
@@ -62,6 +78,7 @@ const AddNote2 = () => {
 			setLoading(false);
 		}
 	};
+
 	return (
 		<div>
 			<div className="fixed top-0 left-0 w-full h-full z-20">

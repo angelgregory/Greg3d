@@ -5,11 +5,11 @@ const Questions = [
 	},
 	{
 		question: "What is Greg?",
-		answer: "A Software Developer, UIX and Graphic Designer, known for his enthusiasm and creativity. He’s passionate about turning ideas into reality and always eager to solve complex problems.",
+		answer: "A Software Developer, Computer Engineer, UIX and Graphic Designer, known for his enthusiasm and creativity. He’s passionate about turning ideas into reality and always eager to solve complex problems. You can view my skillset on my bookshelf.",
 	},
 	{
 		question: "Where is Greg?",
-		answer: "Greg is from the Highlands of Porac, Pampanga, Philippines...\n\nYep, I live in a mountain, not that mountainy tho.\n\nBut you can email me here. Check the cork board out!!!",
+		answer: "Greg is from the Mountains somewhere in Pampanga, Philippines...\n\nYep, I live in a mountain, not that mountainy tho.\n\nBut you can leave me a note on my Corkboard!",
 	},
 	{
 		question: "When is Greg?",

@@ -10,14 +10,14 @@ const Menu = ({ setIsOnMenu }) => {
 	};
 
 	return (
-		<div>
+		<div className="overflow-hidden">
 			{isVisible && (
 				<div className="absolute top-0 flex flex-col gap-5 text-lg justify-center items-center h-screen w-screen bg-black bg-opacity-30 backdrop-blur-sm">
 					<img src={image} className="h-28" />
 					<h1 className="font-nav text-white text-5xl drop-shadow-[0_1px_1px_rgba(0,0,0,0.25)] portrait:text-center">
 						GREG'S INTERACTIVE PORTFOLIO
 					</h1>
-					<p className="text-white">Navigate, interact, and discover what I’m all about!</p>
+					<p className="text-white px-6 text-center">Navigate, interact, and discover what I’m all about!</p>
 					<div className="flex flex-col gap-5">
 						<a
 							onClick={handleButtonClick}

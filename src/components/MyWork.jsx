@@ -36,7 +36,7 @@ const MyWork = ({ isClose, setIsClose }) => {
 	};
 	return (
 		<div>
-			<div className="fixed top-0 left-0 h-screen w-screen z-20">
+			<div className="fixed top-0 left-0 h-screen w-screen z-20 backdrop-blur-sm">
 				<div className="w-[full] h-full flex justify-center items-center">
 					<div className="border-2 border-black bg-slate-300 h-[98%] w-[98%] lg:h-[70%] lg:w-[70%] lg:aspect-video rounded-md overflow-clip">
 						<div className="h-[90%] p-5 flex relative">

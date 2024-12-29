@@ -1,7 +1,7 @@
 import { KeyboardControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { Physics } from "@react-three/rapier";
-import { Suspense, useMemo, useState } from "react";
+import { Suspense, useEffect, useMemo, useState } from "react";
 import { Helmet } from "react-helmet";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import favicon from "./assets/images/GregIconFAVICON.png";
@@ -17,6 +17,7 @@ import Note from "./components/Note";
 import TextBubble from "./components/TextBubble";
 import "./index.css";
 import AddNote2 from "./components/AddNote2";
+import MySkills from "./components/MySkills";
 
 export const Controls = {
 	forward: "forward",
@@ -74,7 +75,18 @@ function App() {
 					<link rel="icon" type="image/png" href={favicon} sizes="16x16" />
 				</Helmet>
 				{/* <RouterProvider router={router} /> */}
-				<Canvas shadows camera={{ position: [0, 6, 42], fov: 80 }}>
+				<Canvas
+					style={{
+						position: "fixed",
+						top: 0,
+						left: 0,
+						width: "100vw",
+						height: "100vh",
+						overflow: "hidden",
+					}}
+					shadows
+					camera={{ position: [0, 6, 42], fov: 90 }}
+				>
 					<color attach="background" args={["#dbecfb"]} />
 					<Suspense>
 						{/* you can use Physics debug to show guiding lines on objects --greg */}
@@ -106,11 +118,13 @@ function App() {
 					<About isClose={isClose} setIsClose={setIsClose} />
 				) : isOnCork ? (
 					<Cork isClose={isClose} setIsClose={setIsClose} />
+				) : isOnCabinet ? (
+					<MySkills isClose={isClose} setIsClose={setIsClose} />
 				) : (
 					""
 				)}
 				<div
-					className="xl:hidden" // Visible on xl and larger, block on smaller screens
+					className="xl:hidden overflow-hidden" // Visible on xl and larger, block on smaller screens
 				>
 					{isOnMenu ? <MenuControls /> : ""}
 				</div>

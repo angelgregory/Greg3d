@@ -59,10 +59,10 @@ const Cork = ({ isClose, setIsClose }) => {
 
 	return (
 		<div>
-			<div className="fixed top-0 left-0 h-screen w-screen z-20">
+			<div className="fixed top-0 left-0 h-screen w-screen z-20 backdrop-blur-sm">
 				<div className="w-full h-full flex justify-center items-center">
 					<div className="bg-white portrait:w-full portrait:h-full landscape:h-[75%] portrait:aspect-[9/16] landscape:aspect-video rounded-2xl portrait:overflow-y-scroll no-scrollbar relative p-10">
-						<div className="h-full rounded-lg overflow-hidden">
+						<div className="h-full rounded-lg overflow-auto no-scrollbar">
 							<div className="flex justify-center items-center text-center mb-10">
 								<IoCloseSharp
 									className=" text-slate-800 absolute top-0 right-0 m-5 cursor-pointer"
@@ -71,13 +71,14 @@ const Cork = ({ isClose, setIsClose }) => {
 										setIsClose(true);
 									}}
 								/>
-								<div>
+								<div className="">
 									<h1 className="font-bold text-3xl">The Cork Board</h1>
-									<p>Drop Greg a note to see when he’s back!</p>
+									<p className="">Send Greg a message to check when he'll be back!</p>
+									<p className="text-xs">(Don't worry, only you and he can see what you wrote.)</p>
 								</div>
 							</div>
 							<ul className="flex list-none flex-wrap gap-5 overflow-scroll no-scrollbar h-full rounded-lg landscape:m-20 landscape:pb-64">
-								<li className="bg-none landscape:flex-[1_0_21%] rounded-lg border-2 border-amber-300 hover:border-amber-300 hover:bg-amber-200 w-full h-60">
+								<li className="bg-none landscape:flex-[1_0_21%] rounded-lg border-2 border-amber-300 hover:border-amber-300 hover:bg-amber-200 landscape:max-w-xs portrait:w-full max-h-60">
 									<Link to={`/AddNote`}>
 										<div className=" text-amber-300 flex justify-center items-center w-full h-full font-light text-5xl">
 											+
@@ -98,7 +99,12 @@ const Cork = ({ isClose, setIsClose }) => {
 													{/* <Link to={`/note/${item._id}`}> */}
 													<div className="w-full  h-full break-all text-ellipsis overflow-auto">
 														<div className="p-10">
-															<h3 className="font-nav mt-0 mb-10">{item.message}</h3>
+															<h4 className=" mt-0 mb-10 text-[10px]">
+																{item.timestamp}
+															</h4>
+															<h3 className="font-nav mt-0 mb-10 text-xs">
+																{item.message}
+															</h3>
 															{/* <p className="mt-0 mb-10 max-h-28">{item.description}</p> */}
 														</div>
 													</div>
