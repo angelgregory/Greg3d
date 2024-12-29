@@ -84,7 +84,7 @@ const MenuControls = () => {
 								onPointerEnter={handleButtonMouseDown("W")}
 								onPointerLeave={handleButtonMouseUp("W")}
 							>
-								W
+								<div className="pointer-events-none">W</div>
 							</button>
 							<div className="ctrl-button"></div>
 						</div>
@@ -94,21 +94,21 @@ const MenuControls = () => {
 								onPointerEnter={handleButtonMouseDown("A")}
 								onPointerLeave={handleButtonMouseUp("A")}
 							>
-								A
+								<div className="pointer-events-none">A</div>
 							</button>
 							<button
 								className="ctrl-button click"
 								onPointerEnter={handleButtonMouseDown("S")}
 								onPointerLeave={handleButtonMouseUp("S")}
 							>
-								S
+								<div className="pointer-events-none">S</div>
 							</button>
 							<button
 								className="ctrl-button click"
 								onPointerEnter={handleButtonMouseDown("D")}
 								onPointerLeave={handleButtonMouseUp("D")}
 							>
-								D
+								<div className="pointer-events-none">D</div>
 							</button>
 						</div>
 					</div>

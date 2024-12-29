@@ -61,7 +61,7 @@ const Cork = ({ isClose, setIsClose }) => {
 		<div>
 			<div className="fixed top-0 left-0 h-screen w-screen z-20 backdrop-blur-sm">
 				<div className="w-full h-full flex justify-center items-center">
-					<div className="bg-white portrait:w-full portrait:h-full landscape:h-[75%] portrait:aspect-[9/16] landscape:aspect-video rounded-2xl portrait:overflow-y-scroll no-scrollbar relative p-10">
+					<div className="w-full  portrait:m-0 m-24 bg-white portrait:w-full portrait:h-full landscape:h-[75%] portrait:aspect-[9/16] landscape:aspect-video rounded-2xl portrait:overflow-y-scroll no-scrollbar relative p-10">
 						<div className="h-full rounded-lg overflow-auto no-scrollbar">
 							<div className="flex justify-center items-center text-center mb-10">
 								<IoCloseSharp

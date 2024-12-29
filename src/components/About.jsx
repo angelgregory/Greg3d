@@ -36,8 +36,8 @@ const About = ({ isClose, setIsClose }) => {
 			<div className="fixed top-0 left-0 h-screen w-screen z-20 backdrop-blur-sm">
 				{/* Esc-hatch - Click Outside */}
 				<div className="fixed top-0 left-0 h-screen w-screen" onPointerDown={() => setIsClose(true)}></div>
-				<div className="w-[full] h-full flex justify-center items-center">
-					<div className="bg-white portrait:w-full portrait:h-full landscape:h-[75%] portrait:aspect-[9/16] landscape:aspect-video rounded-3xl portrait:overflow-y-scroll no-scrollbar snap-mandatory snap-y relative">
+				<div className="w-full h-full flex justify-center items-center">
+					<div className="w-full landscape:m-24 bg-white portrait:w-full portrait:h-full landscape:h-[75%] portrait:aspect-[9/16] landscape:aspect-video rounded-3xl portrait:overflow-y-scroll no-scrollbar snap-mandatory snap-y relative">
 						{/* Esc-hatch - Click Close */}
 						<div
 							className="absolute z-10 bg-white rounded-full w-16 text-4xl flex justify-center m-4 cursor-pointer"
