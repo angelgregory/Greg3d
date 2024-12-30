@@ -98,7 +98,7 @@ export const Experience = ({
 							//   console.log("Exiting intersection: isIntersected false");
 						}}
 					/>
-					<CuboidCollider args={[1.7, 1.25, 3]} position={[5.5, 0, -4]} />
+					<CuboidCollider args={[1.7, 1.25, 3]} position={[5.5, 0, -4]} restitution={0.7} />
 					<Bed scale={[4, 4, 4]} position={[5.5, 1, -4]} rotation-y={[-(Math.PI / 180) * 90]} />
 					{/* Board */}
 					<CuboidCollider
@@ -141,8 +141,8 @@ export const Experience = ({
 						// }}
 					/>
 					{/* Chair */}
-					<CuboidCollider args={[2, 2, 0.5]} position={[-4.5, 0, -1.5]} />
-					<Chair scale={[4, 4, 4]} position={[-4, 0.25, -2]} rotation-y={[-(Math.PI / 180) * 90]} />
+					<CuboidCollider args={[2, 2, 0.5]} position={[-4.5, 0, -1.3]} />
+					<Chair scale={[4, 4, 4]} position={[-4, 0.25, -1.3]} rotation-y={[-(Math.PI / 180) * 90]} />
 					{/* Cabinet */}
 					<CuboidCollider
 						args={[3, 6, 0.5]}

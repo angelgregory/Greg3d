@@ -83,7 +83,7 @@ const AddNote2 = () => {
 		<div>
 			<div className="fixed top-0 left-0 w-full h-full z-20">
 				<div className="w-full h-full flex justify-center items-center">
-					<div className=" backdrop-brightness-50 portrait:w-full portrait:h-full landscape:h-[75%] portrait:aspect-[9/16] landscape:aspect-video rounded-2xl portrait:overflow-y-scroll no-scrollbar snap-mandatory snap-y relative p-10">
+					<div className="w-full  portrait:m-0 m-24 backdrop-brightness-50 portrait:w-full portrait:h-full landscape:h-[75%] portrait:aspect-[9/16] landscape:aspect-video rounded-2xl portrait:overflow-y-scroll no-scrollbar snap-mandatory snap-y relative p-10">
 						<form ref={form} onSubmit={sendEmail} className="flex justify-center items-center h-full">
 							<div className="bg-amber-300 rounded-lg landscape:py-14 portrait:py-10 landscape:w-[50%] portrait:w-full landscape:h-full portrait:h-[80%] relative space-y-6 p-6">
 								<Link to="/" className="absolute top-0 right-0 m-5">
