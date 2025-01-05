@@ -38,9 +38,9 @@ const MyWork = ({ isClose, setIsClose }) => {
 		<div>
 			<div className="fixed top-0 left-0 h-screen w-screen z-20 backdrop-blur-sm">
 				<div className="w-[full] h-full flex justify-center items-center">
-					<div className="border-2 border-black bg-slate-300 h-[98%] w-[98%] lg:h-[70%] lg:w-[70%] lg:aspect-video rounded-md overflow-clip">
-						<div className="h-[90%] p-5 flex relative">
-							<div className={"w-[20%] h-full flex flex-col gap-14 text-center font-nav"}>
+					<div className="border-2 border-black bg-slate-300 h-[98%] w-[98%] lg:h-[90%] lg:w-[90%] lg:aspect-video rounded-md overflow-clip">
+						<div className="h-[90%] flex relative">
+							<div className={"p-5 w-[10%] h-full flex flex-col gap-14 text-center font-nav"}>
 								<div
 									className="w-[10vh] h-[10vh] flex flex-col items-center "
 									onClick={() => {
@@ -84,8 +84,8 @@ const MyWork = ({ isClose, setIsClose }) => {
 							</div>
 							<div
 								className={`${
-									isWorkFolder
-										? "bg-white absolute lg:relative top-0 left-0 h-full w-full overflow-clip p-2 "
+									isWorkFolder || isProjectsFolder
+										? "bg-white absolute lg:relative top-0 left-0 h-full w-full overflow-clip"
 										: ""
 								} rounded-md`}
 							>
@@ -102,7 +102,7 @@ const MyWork = ({ isClose, setIsClose }) => {
 									<IFrame>
 										<ProjectsFolder
 											closeFn={() => {
-												setIsWorkFolder(false);
+												setIsProjectsFolder(false);
 											}}
 										/>
 									</IFrame>

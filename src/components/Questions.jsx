@@ -1,11 +1,11 @@
 const Questions = [
 	{
 		question: "Who is Greg?",
-		answer: "Greg is known for his enthusiasm and creativity. Loves being the person who pitches innovative ideas and tries to bring them to life. In simple terms, a Weirdo",
+		answer: "Greg is known for his enthusiasm and creativity. Loves being the person who pitches innovative ideas and tries to bring them to life.",
 	},
 	{
 		question: "What is Greg?",
-		answer: "A Software Developer, Computer Engineer, UIX and Graphic Designer, known for his enthusiasm and creativity. He’s passionate about turning ideas into reality and always eager to solve complex problems. You can view my skillset on my bookshelf.",
+		answer: "A Software Developer, Computer Engineer, UIX and a Graphic Designer, known for his enthusiasm and creativity. He’s passionate about turning ideas into reality and always eager to solve complex problems. You can view my skillset on my bookshelf.",
 	},
 	{
 		question: "Where is Greg?",
