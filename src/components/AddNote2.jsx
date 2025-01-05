@@ -126,7 +126,7 @@ const AddNote2 = () => {
 										} rounded-lg h-48 resize-none focus:outline-none focus:border-amber-500 peer`}
 									/>
 									<label className="absolute left-4 top-3 text-amber-700 text-xs transition-all duration-300 -translate-y-8 peer-placeholder-shown:translate-y-0 peer-focus:-translate-y-8 peer-focus:text-black">
-										Tell me something fun!
+										Tell Greg something fun!
 									</label>
 									{errors.message && <p className="mt-1 text-red-500 text-xs">{errors.message}</p>}
 								</div>{" "}

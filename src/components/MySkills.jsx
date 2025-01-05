@@ -28,7 +28,7 @@ const MySkills = ({ isClose, setIsClose }) => {
 								}}
 							/>
 							<div>
-								<h1 className="font-bold text-3xl">Skill set</h1>
+								<h1 className="font-bold text-3xl">Skills Rack</h1>
 								<div className="flex justify-center list-none flex-wrap gap-5  no-scrollbar h-full rounded-lg mt-10">
 									{imageList}
 								</div>
