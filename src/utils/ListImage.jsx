@@ -16,7 +16,8 @@ export const generateImageList = (images, classNames = {}) => {
 			getImageOrientation(image.default, setOrientation);
 		}, [image]);
 
-		const baseClass = "h-36 w-36 transition ease-in-out duration-700 transform hover:scale-110 cursor-pointer";
+		const baseClass =
+			"bg-no-repeat transition ease-in-out duration-700 transform hover:scale-110 cursor-pointer";
 		const orientationClass = orientation === "horizontal" ? classNames.horizontal || "" : classNames.vertical || "";
 
 		return (
