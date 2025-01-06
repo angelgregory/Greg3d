@@ -95,8 +95,8 @@ export function Project() {
 						</div>
 						{/* Carousel */}
 						<div className="flex-1 h-56 sm:h-64 xl:h-80 2xl:h-96 w-1/2 border-2 rounded-lg">
-							<Flowbite theme={{ theme: customTheme }}>
-								<Carousel>{project.images}</Carousel>
+							<Flowbite theme={{ theme: { carousel: customTheme } }}>
+								<Carousel className=" rounded-md">{project.images}</Carousel>
 							</Flowbite>
 						</div>
 					</div>
